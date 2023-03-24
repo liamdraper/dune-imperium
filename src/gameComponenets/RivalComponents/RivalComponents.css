@@ -1,0 +1,5 @@
+.rivals {
+    grid-row: 2 / 6;
+    grid-column: 4 / 5; 
+    background-color: rgb(221, 63, 63);
+}

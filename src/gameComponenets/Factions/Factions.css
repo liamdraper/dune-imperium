@@ -1,0 +1,5 @@
+.factions {
+    background-color: gray;
+    grid-row: 2 / 6;
+    grid-column: 1 / 2;     
+}

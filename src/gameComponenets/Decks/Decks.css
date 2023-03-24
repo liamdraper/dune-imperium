@@ -1,0 +1,5 @@
+.decks {
+    background-color: rgb(50, 164, 202);
+    grid-row: 1 / 6;
+    grid-column: 1 / 2;     
+}

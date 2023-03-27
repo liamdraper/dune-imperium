@@ -10,24 +10,35 @@ import ScoreTrack from "../../gameBoardComponents/ScoreTrack/ScoreTrack";
 import RivalComponenets from "../../gameBoardComponents/RivalComponents/RivalComponents";
 import PlayerComponenets from "../../gameBoardComponents/PlayerComponents/PlayerComponents";
 import "./GamePage.css";
+import { useEffect, useState, useRef } from "react";
+import * as gamesAPI from "../../utilities/games-api";
 
-export default function GamePage() {
+export default function GamePage({ game }) {
+
+    // useEffect(() => {
+    //     async function getGame() {
+    //         // const game = await gamesAPI.getGame();
+    //     }
+    // })
+
     return (
         <>
-            <h1>Turn: </h1>
-            <Modal />
-            <div className="board">
-                <Decks />
-                <LandsraadCouncil />
-                <CHOAM />
-                <Factions />
-                <Cities />
-                <Deserts />
-                <Combat />
-                <ScoreTrack />
-                <RivalComponenets />
-                <PlayerComponenets />
-            </div>
+            <>
+                {/* <h1>Turn: { gameRef.current.turn }</h1> */}
+                {console.log(game + 'test')}
+                <div className="board">
+                    <Decks />
+                    <LandsraadCouncil />
+                    <CHOAM />
+                    <Factions />
+                    <Cities />
+                    <Deserts />
+                    <Combat />
+                    <ScoreTrack />
+                    <RivalComponenets />
+                    <PlayerComponenets />
+                </div>
+            </>
         </>
     )
 }

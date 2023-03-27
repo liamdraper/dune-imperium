@@ -1,12 +1,12 @@
-import "./Modal.css";
+import "./NewGamePage.css";
 import { leaders } from "../../card-data";
 import { starterDeck } from "../../card-data";
-import LeaderCard from "./LeaderCard/LeaderCard";
+import LeaderCard from "../../components/Modal/LeaderCard/LeaderCard";
 import { useState, useRef } from "react";
 import { addGame } from "../../utilities/games-api";
 import { addPlayer } from "../../utilities/players-data";
 
-export default function Modal( { gameRef }) {
+export default function NewGamePage( { gameRef }) {
 
     const [page, setPage] = useState(1);
     const [leaderPick, setLeaderPick] = useState(null);

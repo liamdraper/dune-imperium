@@ -4,7 +4,10 @@ export default function HomePage() {
     return (
         <>
             <h1>Home</h1>
-            <Link to="/game">Start Game</Link>
+            <ul>
+                <li><Link to="/newGame">New Game</Link></li>
+                <li><Link to="/loadGame">Load Game</Link></li>
+            </ul>
         </>
     )
 }

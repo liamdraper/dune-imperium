@@ -26,14 +26,7 @@ export const leaders = [
         house: "House Harkonnen",
         leaderAbility: {name: "Arrakis Fiefdom", description: "You start the game with additional resources: 1 spice and 1 solari."},
         signetRingAbility: {name: "Brutality", description: "Gain one or two soldiers if you have at least one Faction Alliance."}
-    },
-    {
-        name: 'Glossu "The Beast" Rabban',
-        difficulty: 1,
-        house: "House Harkonnen",
-        leaderAbility: {name: "Arrakis Fiefdom", description: "You start the game with additional resources: 1 spice and 1 solari."},
-        signetRingAbility: {name: "Brutality", description: "Gain one or two soldiers if you have at least one Faction Alliance."}
-    },
+    },  
     {
         name: 'Earl Memnon Thorvald',
         difficulty: 1,

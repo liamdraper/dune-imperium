@@ -8,9 +8,11 @@ export default function Deserts() {
         <>
             <div className="deserts">
                 <h2>Deserts</h2>
-                <TheGreatFlat />
-                <HaggaBasin />
-                <ImperialBasin />
+                <div className={"desert-locations"}>
+                    <TheGreatFlat />
+                    <HaggaBasin />
+                    <ImperialBasin />
+                </div>
             </div>
         </>
     )

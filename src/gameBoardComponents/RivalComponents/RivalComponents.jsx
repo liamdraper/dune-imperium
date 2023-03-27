@@ -1,4 +1,4 @@
-import "/Users/liam/code/dune-imperium/src/gameComponenets/RivalComponents/RivalComponents.css";
+import "/Users/liam/code/dune-imperium/src/gameBoardComponents/RivalComponents/RivalComponents.css";
 
 export default function RivalComponenets() {
     return (

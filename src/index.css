@@ -151,3 +151,13 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+#location {
+  height: 6vmin;
+  width: 6vmin;
+  border: .2vmin solid black;
+}
+
+#location:hover {
+  border: .2vmin solid red;
+}

@@ -1,20 +1,20 @@
 import Modal from "../../components/Modal/Modal";
-import Decks from "../../gameComponenets/Decks/Decks";
-import LandsraadCouncil from "../../gameComponenets/LandsraadCouncil/LandsraadCouncil";
-import CHOAM from "../../gameComponenets/CHOAM/CHOAM";
-import Factions from "../../gameComponenets/Factions/Factions";
-import Cities from "../../gameComponenets/Cities/Cities";
-import Deserts from "../../gameComponenets/Deserts/Deserts";
-import Combat from "../../gameComponenets/Combat/Combat";
-import ScoreTrack from "../../gameComponenets/ScoreTrack/ScoreTrack";
-import RivalComponenets from "../../gameComponenets/RivalComponents/RivalComponents";
-import PlayerComponenets from "../../gameComponenets/PlayerComponents/PlayerComponents";
+import Decks from "../../gameBoardComponents/Decks/Decks";
+import LandsraadCouncil from "../../gameBoardComponents/LandsraadCouncil/LandsraadCouncil";
+import CHOAM from "../../gameBoardComponents/CHOAM/CHOAM";
+import Factions from "../../gameBoardComponents/Factions/Factions";
+import Cities from "../../gameBoardComponents/Cities/Cities";
+import Deserts from "../../gameBoardComponents/Deserts/Deserts";
+import Combat from "../../gameBoardComponents/Combat/Combat";
+import ScoreTrack from "../../gameBoardComponents/ScoreTrack/ScoreTrack";
+import RivalComponenets from "../../gameBoardComponents/RivalComponents/RivalComponents";
+import PlayerComponenets from "../../gameBoardComponents/PlayerComponents/PlayerComponents";
 import "./GamePage.css";
 
 export default function GamePage() {
     return (
         <>
-            <h1>Game</h1>
+            <h1>Turn: </h1>
             <Modal />
             <div className="board">
                 <Decks />

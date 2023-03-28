@@ -37,19 +37,37 @@ export default function GamePage() {
         getPlayer();
     }, []);
 
-    // useEffect(() => {
-    //     async function getPlayer() {
-    //         const players = await playersAPI.getAllPlayers();
-    //         const player = players.find((p) => p._id === id);
-    //         console.log(player);
-    //         setPlayer(player);
-    //     }
-    //     getPlayer();
-    // }, [id])
+    function gameplay() {
+
+    }
+
+    if (game.turn === 1.1) {
+        // Draw 1st 5 cards from top of deck
+        for (let i=0; i<5; i++) {
+            if (player.deck.length === 0) {
+                // Shuffle discard pile and make it into new deck
+                shuffle(player.discardPile);
+                for (let j=0; j<player.discardPile.length; j++) {
+                    player.deck.push(player.discardPile.pop());
+                }
+            }
+            player.hand.push(player.deck.pop());
+        }
+    }
+
+    // Implementation of Fisher–Yates shuffle
+    function shuffle(arr) {
+        for (let i=arr.length-1; i>0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
+
+
     if (!player) return null;
     return (
         <>
-            <h1>Turn: {turn}</h1>
+            {/* <h1>Turn: {turn}</h1> */}
             <div className="board">
                 <Decks />
                 <LandsraadCouncil />

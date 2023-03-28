@@ -1,10 +1,11 @@
 import "./NewGamePage.css";
 import { leaders } from "../../card-data";
 import { starterDeck } from "../../card-data";
+import { conflictDeck } from "../../card-data";
 import LeaderCard from "../../components/Modal/LeaderCard/LeaderCard";
 import { useState } from "react";
 import { addGame } from "../../utilities/games-api";
-import { addPlayer } from "../../utilities/players-data";
+import { addPlayer } from "../../utilities/players-api";
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function NewGamePage() {
@@ -25,11 +26,11 @@ export default function NewGamePage() {
             unit: 2,
             persuassion: 0,
             hand: [],
-            deck: [starterDeck[0], starterDeck[0], starterDeck[1], starterDeck[1], starterDeck[2], starterDeck[2], starterDeck[3], starterDeck[4], starterDeck[5], starterDeck[6]]
+            deck: [starterDeck[0], starterDeck[0], starterDeck[1], starterDeck[1], starterDeck[2], starterDeck[2], starterDeck[3], starterDeck[4], starterDeck[5], starterDeck[6]],
+            discardPile: []
         }
         const player = await addPlayer(playerData);
-        console.log(player);
-        const gameData = {name:'Game 1', turn: 1, player: player._id};
+        const gameData = {name:'Game 1', turn: 'round-start', player: player._id, conflictDeck: [conflictDeck[0]]};
         const game = await addGame(gameData);
         navigate(`/game/${game._id}`);
     }

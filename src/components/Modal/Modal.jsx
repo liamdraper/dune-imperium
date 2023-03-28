@@ -4,7 +4,7 @@ import { starterDeck } from "../../card-data";
 import LeaderCard from "./LeaderCard/LeaderCard";
 import { useState, useRef } from "react";
 import { addGame } from "../../utilities/games-api";
-import { addPlayer } from "../../utilities/players-data";
+import { addPlayer } from "../../utilities/players-api";
 
 export default function Modal( { gameRef }) {
 

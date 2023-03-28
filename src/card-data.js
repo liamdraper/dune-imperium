@@ -228,3 +228,12 @@ export const houseHagalCards = [
 ]
 
 export const intrigueCards = []
+
+export const conflictDeck = [
+    {
+        name: 'Skirmish',
+        firstPlace: '1 victory point',
+        secondPlace: '2 solari and 1 intrigue card',
+        thirdPlace: '2 solari'
+    }
+]

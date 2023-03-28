@@ -13,7 +13,8 @@ const playerSchema = new Schema({
     unit: {type: Number},
     persuassion: {type: Number},
     hand: {type: Array},
-    deck: {type: Array}
+    deck: {type: Array},
+    discardPile: {type: Array}
 })
 
 module.exports = mongoose.model('Player', playerSchema);

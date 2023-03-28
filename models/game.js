@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
     name: {type: String},
-    turn: {type: Number},
-    player: {type: Schema.Types.ObjectId, ref: 'Player'}
+    turn: {type: String},
+    player: {type: Schema.Types.ObjectId, ref: 'Player'},
+    conflictDeck: {type: Array}
 })
 
 module.exports = mongoose.model('Game', gameSchema);

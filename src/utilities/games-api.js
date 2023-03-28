@@ -9,6 +9,6 @@ export function addGame(gameData) {
     return sendRequest(BASE_URL, 'POST', gameData);
 }
 
-// export function getGame(gameData) {
-//     return sendRequest(BASE_URL, 'GET', gameData);
-// }
+export function getGame(id) {
+    return sendRequest(`${BASE_URL}/${id}`);
+}

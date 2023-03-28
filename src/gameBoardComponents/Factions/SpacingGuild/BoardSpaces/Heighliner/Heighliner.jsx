@@ -1,7 +1,10 @@
 
 
-export default function Decks() {
+export default function Heighliner() {
     return (
-        <></>
+        <>
+            <h3>Heighliner</h3>
+            <div id="location"></div>
+        </>
     )
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as gamesAPI from "../../utilities/games-api";
 import { Link } from 'react-router-dom';
 
-export default function LoadGamePage({ setGame }) {
+export default function LoadGamePage() {
 
     const [games, setGames] = useState([]);
 
@@ -17,7 +17,7 @@ export default function LoadGamePage({ setGame }) {
     return(
         <>
             <ul>
-                {games.map((game) => <li><Link to={`/game/${game.name}`} onClick={(e) => setGame(game)}>{game.name}</Link></li>)}
+                {games.map((game) => <li><Link to={`/game/${game._id}`}>{game.name}</Link></li>)}
             </ul>
         </>
     )

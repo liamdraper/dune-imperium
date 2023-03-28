@@ -12,7 +12,6 @@ import LoadGamePage from '../LoadGamePage/LoadGamePage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [game, setGame] = useState({});
 
   return (
     <main className="App">
@@ -24,8 +23,8 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/rules" element={<RulesPage />} />
               <Route path="/newGame" element={<NewGamePage />} />
-              <Route path="/loadGame" setGame={setGame} element={<LoadGamePage />} />
-              <Route path="/game/:name" game={game} element={<GamePage />} />
+              <Route path="/loadGame" element={<LoadGamePage />} />
+              <Route path="/game/:id" element={<GamePage />} />
             </Routes>
           </>
           :

@@ -156,18 +156,75 @@ export const starterDeck = [
 
 export const imperiumRowCards = [
     {
-        name: 'The Spice Must Flow',
+        name: 'Arrakis Recruiter',
         faction: null,
-        agentIcon: ['emperor', 'spacingGuild', 'beneGesserit', 'fremen', 'landsraadCouncil', 'cities', 'deserts'],
+        agentIcon: ['cities'],
+        agentBox: 'Gain 1 soldier',
+        revealBox: 'Gain 1 persuassion and 1 strength',
+        persuassionCost: 2,
+        aquireEffect: null
+    },
+    {
+        name: 'Assassination Mission',
+        faction: null,
+        agentIcon: null,
         agentBox: null,
-        revealBox: 'Gain 1 spice',
-        persuassionCost: 9,
-        aquireEffect: 'Gain 1 victory point'
+        revealBox: 'Gain 1 solari and 1 strength',
+        persuassionCost: 1,
+        aquireEffect: null,
+        special: 'When this card is trashed, gain 4 solari.'
+    },
+    {
+        name: 'Bene Gesserit Initiate',
+        faction: 'Bene Gesserit',
+        agentIcon: ['cities', 'landsraadCouncil', 'deserts', 'CHOAM'],
+        agentBox: 'Draw 1 card',
+        revealBox: 'Gain 1 persuassion',
+        persuassionCost: 3,
+        aquireEffect: null
+    },
+    {
+        name: 'Bene Gesserit Sister',
+        faction: 'Bene Gesserit',
+        agentIcon: ['beneGesserit', 'landsraadCouncil'],
+        agentBox: null,
+        revealBox: '2 persuassion OR 2 strength',
+        persuassionCost: 3,
+        aquireEffect: null
+    },
+    {
+        name: 'Carryall',
+        faction: null,
+        agentIcon: ['choam', 'desert'],
+        agentBox: 'asdfasdf',
+        revealBox: 'asdfasdf',
+        persuassionCost: 5,
+        aquireEffect: null
     },
 ]
 
 export const houseHagalCards = [
-    
+    {
+        name: 'Arrakeen',
+        combatSpace: true,
+        agentIcon: ['city'],
+        cost: null,
+        aquireEffect: 'Gain 1 troop and draw a card'
+    },
+    {
+        name: 'Carthag',
+        combatSpace: true,
+        agentIcon: ['city'],
+        cost: null,
+        aquireEffect: 'Gain 1 troop and draw a card'
+    },
+    {
+        name: 'Conspire',
+        combatSpace: true,
+        agentIcon: ['city'],
+        cost: null,
+        aquireEffect: 'Gain 1 troop and draw a card'
+    },
 ]
 
 export const intrigueCards = []

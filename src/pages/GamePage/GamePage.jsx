@@ -12,20 +12,28 @@ import PlayerComponenets from "../../gameBoardComponents/PlayerComponents/Player
 import "./GamePage.css";
 import { useEffect, useState, useRef } from "react";
 import * as gamesAPI from "../../utilities/games-api";
+import { useParams } from "react-router-dom";
 
-export default function GamePage({ game }) {
+export default function GamePage() {
+    const [game, setGame] = useState({});
+    const [player, setPlayer] = useState({});
+    const { id } = useParams();
 
-    // useEffect(() => {
-    //     async function getGame() {
-    //         // const game = await gamesAPI.getGame();
-    //     }
-    // })
+    useEffect(() => {
+        async function getGame() {
+            const game = await gamesAPI.getGame(id);
+            setGame(game);
+        }
+        getGame();
+    }, []);
+
+    useEffect(() => )
 
     return (
         <>
             <>
                 {/* <h1>Turn: { gameRef.current.turn }</h1> */}
-                {console.log(game + 'test')}
+                {console.log(game)}
                 <div className="board">
                     <Decks />
                     <LandsraadCouncil />

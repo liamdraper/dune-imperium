@@ -5,6 +5,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.get('/', gamesCtrl.getAllGames);
 router.post('/', gamesCtrl.addGame);
-
+router.get('/:id', gamesCtrl.getGame);
 
 module.exports = router;

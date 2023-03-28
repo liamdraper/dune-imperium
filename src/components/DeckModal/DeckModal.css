@@ -1,15 +1,3 @@
-.deck {
-    border: .2vmin solid black;
-    height: 6vmin;
-    width: 4vmin;
-}
-
-.hand {
-    border: .2vmin solid black;
-    height: 6vmin;
-    width: 4vmin;
-}
-
 .deck-modal {
     position: fixed;
     top: 50%;

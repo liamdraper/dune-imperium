@@ -9,10 +9,12 @@ export default function Cities() {
         <>
             <div className="cities">
                 <h2>Cities</h2>
-                <SietchTabr />
-                <ResearchStation />
-                <Carthag />
-                <Arrakeen />
+                <div className={"city-locations"}>
+                    <SietchTabr />
+                    <ResearchStation />
+                    <Carthag />
+                    <Arrakeen />
+                </div>
             </div>
         </>
     )

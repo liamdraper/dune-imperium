@@ -1,10 +1,20 @@
-import "./PlayerDeck.css";  
+import "./PlayerDeck.css";
+import { useState, useEffect } from "react";
+import DeckModal from "../../../components/DeckModal/DeckModal";
 
 export default function PlayerDeck() {
+    const [showModal, setShowModal] = useState('none');
+
+
     return (
         <>
-        <div className="hand">Hand</div>
-        <div className="deck">Deck</div>
+            {/* <DeckModal showModal={showModal} setShowModal={setShowModal}/> */}
+            <div style={{display:showModal}} className="deck-modal">
+                <button onClick={() => setShowModal('none')}>X</button>
+                <ul></ul>
+            </div>
+            <button onClick={() => setShowModal('block')} className="hand">Open</button>
+            <div className="deck">Deck</div>
         </>
     )
 }

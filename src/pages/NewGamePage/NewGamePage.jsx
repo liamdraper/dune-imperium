@@ -11,7 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function NewGamePage() {
 
     const [page, setPage] = useState(1);
-    const [leaderPick, setLeaderPick] = useState(null);
+    const [leaderPick, setLeaderPick] = useState(leaders[0]);
     const navigate = useNavigate();
 
     async function handleGameStart() {
@@ -28,9 +28,16 @@ export default function NewGamePage() {
             hand: [],
             deck: [starterDeck[0], starterDeck[0], starterDeck[1], starterDeck[1], starterDeck[2], starterDeck[2], starterDeck[3], starterDeck[4], starterDeck[5], starterDeck[6]],
             discardPile: []
-        }
+        };
         const player = await addPlayer(playerData);
-        const gameData = {name:'Game 1', turn: 'round-start', player: player._id, conflictDeck: [conflictDeck[0]]};
+        const gameData = {
+            name:'Game 1', 
+            turn: 1.0, 
+            player: player._id, 
+            conflictDeck: 
+            [conflictDeck[0]],
+            boardLocations: [ {name: 'highCouncil', taken: false}, {name: 'hallOfOratory', taken: false}, {name: 'mentat', taken: false}, {name: 'rallyTroops', taken: false}, {name: 'swordmaster', taken: false}, {name: 'sellMelange', taken: false}, {name: 'secureContract', taken: false}, {name: 'conspire', taken: false}, {name: 'wealth', taken: false}, {name: 'heighliner', taken: false}, {name: 'foldspace', taken: false}, {name: 'selectiveBreeding', taken: false}, {name: 'secrets', taken: false}, {name: 'hardyWarriors', taken: false}, {name: 'stillsuits', taken: false}, {name: 'sietchTabr', taken: false}, {name: 'researchStation', taken: false}, {name: 'carthag', taken: false}, {name: 'arrakeen', taken: false}, {name: 'theGreatFlat', taken: false}, {name: 'haggaBasin', taken: false}, {name: 'imperialBasin', taken: false}]
+        };
         const game = await addGame(gameData);
         navigate(`/game/${game._id}`);
     }

@@ -14,11 +14,11 @@ import { useEffect, useState } from "react";
 import * as gamesAPI from "../../utilities/games-api";
 import * as playersAPI from "../../utilities/players-api";
 import { useParams } from "react-router-dom";
+import Menu from "../../components/GameMenu/GameMenu";
 
 export default function GamePage() {
     const [game, setGame] = useState(null);
     const [player, setPlayer] = useState(null);
-    const [turn, setTurn] = useState('round-start');
     const { id } = useParams();
 
     useEffect(() => {
@@ -37,22 +37,26 @@ export default function GamePage() {
         getPlayer();
     }, []);
 
-    function gameplay() {
+    //Game Logic
 
-    }
+    if (!player || !game) return null;
 
+    //Round Start phase
+
+    // Refactor to setState ??
     if (game.turn === 1.1) {
         // Draw 1st 5 cards from top of deck
         for (let i=0; i<5; i++) {
             if (player.deck.length === 0) {
                 // Shuffle discard pile and make it into new deck
-                shuffle(player.discardPile);
-                for (let j=0; j<player.discardPile.length; j++) {
-                    player.deck.push(player.discardPile.pop());
-                }
+                // shuffle(player.discardPile);
+                // for (let j=0; j<player.discardPile.length; j++) {
+                //     player.deck.push(player.discardPile.pop());
+                // }
             }
             player.hand.push(player.deck.pop());
         }
+        game.turn = 2;
     }
 
     // Implementation of Fisher–Yates shuffle
@@ -63,11 +67,18 @@ export default function GamePage() {
         }
     }
 
+    function handleTest() {
+        console.log(player);
+        setGame({...game, turn: 0.9});
+        console.log(player);
+    }
 
-    if (!player) return null;
+    
     return (
         <>
-            {/* <h1>Turn: {turn}</h1> */}
+            <button onClick={handleTest}>Test</button>
+            {console.log(game)}
+            <Menu game={game} player={player}/>
             <div className="board">
                 <Decks />
                 <LandsraadCouncil />
@@ -78,7 +89,7 @@ export default function GamePage() {
                 <Combat game={game}/>
                 <ScoreTrack />
                 <RivalComponenets />
-                <PlayerComponenets player={player}/>
+                <PlayerComponenets game={game} player={player}/>
             </div>
     </>
     )

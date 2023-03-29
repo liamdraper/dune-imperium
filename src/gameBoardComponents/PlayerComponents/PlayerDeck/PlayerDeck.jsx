@@ -12,7 +12,7 @@ export default function PlayerDeck({player}) {
             {/* <DeckModal showModal={showModal} setShowModal={setShowModal}/> */}
             <div style={{display:showModal}} className="deck-modal">
                 <button onClick={() => setShowModal('none')}>X</button>
-                <ul>{player.deck.map((card) => <Card card={card}/>)}</ul>
+                <ul>{player.hand.map((card) => <Card card={card}/>)}</ul>
             </div>
             <button onClick={() => setShowModal('block')} className="hand">Open</button>
             <div className="deck">Deck</div>

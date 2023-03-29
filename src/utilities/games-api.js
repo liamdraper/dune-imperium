@@ -12,3 +12,7 @@ export function addGame(gameData) {
 export function getGame(id) {
     return sendRequest(`${BASE_URL}/${id}`);
 }
+
+export function saveGame(savedGame) {
+    return sendRequest(`${BASE_URL}/${savedGame._id}`, 'PUT', { savedGame });
+}

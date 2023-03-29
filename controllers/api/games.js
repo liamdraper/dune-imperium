@@ -3,7 +3,8 @@ const Game = require('../../models/game');
 module.exports = {
     getAllGames,
     addGame,
-    getGame
+    getGame,
+    saveGame
 }
 
 async function getAllGames(req, res) {
@@ -21,4 +22,11 @@ async function getGame(req, res) {
     const id = req.params.id;
     const game = await Game.findById(id);
     res.json(game);
+}
+
+async function saveGame(req, res) {
+    const id = req.params.id;
+    const newData = req.body.savedGame;
+    const game = await Game.findOneAndUpdate({ _id: id}, {turn: newData.turn, boardLocations: newData.boardLocations}, { new: true });
+    // res.json(game);
 }

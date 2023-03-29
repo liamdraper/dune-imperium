@@ -1,6 +1,6 @@
-import "/Users/liam/code/dune-imperium/src/gameBoardComponents/RivalComponents/RivalComponents.css";
+import "./RivalComponents.css";
 
-export default function RivalComponenets() {
+export default function RivalComponents() {
     return (
         <>
             <div className="rivals">

@@ -157,7 +157,3 @@ button[type="submit"] {
   width: 6vmin;
   border: .2vmin solid black;
 }
-
-#location:hover {
-  border: .2vmin solid red;
-}

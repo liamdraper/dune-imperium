@@ -8,7 +8,8 @@ export default function LeaderCard({ leader, setLeaderPick }) {
     function handleClick() {
         setLeaderPick(leader);
         // Set background color of li to blue
-        // const cardEls = document.querySelectorAll('')
+        const cardEls = document.querySelectorAll('.leaders-list > li');
+        cardEls.forEach((c) => setSelected('white'));
         setSelected('#03d3fc');
     }
 

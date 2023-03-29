@@ -85,7 +85,7 @@ export default function GamePage() {
                 <CHOAM />
                 <Factions />
                 <Cities />
-                <Deserts />
+                <Deserts game={game} setGame={setGame}/>
                 <Combat game={game}/>
                 <ScoreTrack />
                 <RivalComponenets />

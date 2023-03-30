@@ -1,9 +1,23 @@
 .card {
-    border: 1vmin solid black;
+    border: 1vmin solid;
+    border-radius: 1vmin;
     aspect-ratio:  63.5 / 88;
     height: 30vmin;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card.active {
+    border-color: blue;
+}
+
+.card.inactive {
+    border-color: black;
 }
 
 .name {
@@ -11,6 +25,7 @@
     height: 3vmin;
     background-color: rgb(45, 45, 45);
 }
+
 .name > h3{
     color: white;
     font-size: 1.7vmin;
@@ -19,13 +34,15 @@
 }
 
 .persuassion {
-    height: 2vmin;
-    width: 2vmin;
+    height: 3   vmin;
+    width: 3vmin;
     background-color: rgb(64, 156, 222);
     color: white;
     position: absolute;
     transform: rotate(45deg);
-    /* right: 10vmin; */
+    top: 1vmin;
+    right: 1vmin;
+    z-index: 9; 
 }
 
 .persuassion > span{

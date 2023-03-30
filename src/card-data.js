@@ -119,7 +119,7 @@ export const starterDeck = [
     {
         name: 'Reconnaissance',
         faction: null,
-        agentIcon: ['cities'],
+        agentIcon: ['Cities'],
         agentBox: null,
         revealBox: 'Gain 1 persuassion',
         persuassionCost: null,

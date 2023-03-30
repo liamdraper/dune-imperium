@@ -7,7 +7,7 @@ import "./Cities.css"
 export default function Cities() {
     return (
         <>
-            <div className="cities">
+            <div className="cities" id="Cities">
                 <h2>Cities</h2>
                 <div className={"city-locations"}>
                     <SietchTabr />

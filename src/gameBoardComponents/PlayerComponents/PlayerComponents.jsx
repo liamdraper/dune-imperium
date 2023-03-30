@@ -23,8 +23,10 @@ export default function PlayerComponenets({game, player}) {
             <div className="player">
                 <h2>My stuff</h2>
                     <button onClick={handlePlaceAgent}>Place Agent</button>
+                    <button>End Turn</button>
+                    <button>Reveal</button>
                     <PlayerPieces />
-                <PlayerDeck player={player}/>
+                <PlayerDeck game={game} player={player}/>
             </div>
         </>
     )

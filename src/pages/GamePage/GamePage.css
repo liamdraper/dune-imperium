@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr .5fr .5fr;
     grid-template-rows: 1.5fr 1fr 1fr 1fr 2fr;
-    height: 80vmin;
-    width: 180vmin;
+    height: 85vmin;
+    width: 190vmin;
+    margin-left: 3vmin;
 }

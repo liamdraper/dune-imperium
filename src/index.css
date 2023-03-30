@@ -24,7 +24,7 @@ body {
   font-family: Gothic;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: #1e1e32;
   /* padding: 2vmin; */
   /* height: 100vh; */
 }

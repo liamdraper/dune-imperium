@@ -1,5 +1,26 @@
 .leader-card {
     list-style-type: none;
-    border: .2vmin solid black;
+    border: 1vmin solid;
+    border-radius: 1vmin;
     margin: 2vmin;
+    height: 40vmin;
+    width: 70vmin;
+    opacity: 0;
+    position: absolute;
+    left: 25vmin;
+    transition: opacity .2s ease-in-out;
+}
+
+.leader-card.active {
+    opacity: 1;
+}
+
+.leader-name {
+    color: white;
+    background-color: rgb(33, 33, 33);
+    margin-top: 0;
+}
+
+.leader-card > img {
+    height: 8vmin;
 }

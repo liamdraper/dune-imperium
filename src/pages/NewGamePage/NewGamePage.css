@@ -10,8 +10,5 @@
 }
 
 .leaders-list {
-    /* padding-left: 0; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    position: relative;
 }

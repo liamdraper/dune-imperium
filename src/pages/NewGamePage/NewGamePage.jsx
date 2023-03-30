@@ -42,13 +42,28 @@ export default function NewGamePage() {
         navigate(`/game/${game._id}`);
     }
 
+    const [currentCard, setCurrentCard] = useState(0);
+    const length = leaders.length;
+    console.log(length);
+
+
+    function prevCard(){
+        setCurrentCard(currentCard === 0 ? length - 1 : currentCard - 1);
+    }
+
+    function nextCard() {
+        setCurrentCard(currentCard === length - 1 ? 0 : currentCard + 1);
+    }
+
     if (page === 1) {
         return (
             <div className="modal">
                 <h1>Pick Leader</h1>
                 <section><button onClick={() => setPage(page-1)}></button>Page:{page}<button onClick={() => setPage(page+1)}></button></section>
                 <ul className="leaders-list">
-                    {leaders.map((l) => <LeaderCard setLeaderPick={setLeaderPick} leader={l} key={l}/>)}
+                    <button onClick={prevCard}> Left </button>
+                    <button onClick={nextCard}> Right </button>
+                    {leaders.map((l, index) => <LeaderCard currentCard={currentCard} setLeaderPick={setLeaderPick} leader={l} index={index}/>)}
                 </ul>
                 <h1>Pick Color</h1>
                 <select>

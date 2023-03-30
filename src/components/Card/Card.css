@@ -1,3 +1,53 @@
 .card {
-    border: .1vmin solid black;
+    border: 1vmin solid black;
+    aspect-ratio:  63.5 / 88;
+    height: 30vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    /* padding-top: 0vmin; */
+    height: 3vmin;
+    background-color: rgb(45, 45, 45);
+}
+.name > h3{
+    color: white;
+    font-size: 1.7vmin;
+    text-align: left;
+    margin-top: .5vmin;
+}
+
+.persuassion {
+    height: 2vmin;
+    width: 2vmin;
+    background-color: rgb(64, 156, 222);
+    color: white;
+    position: absolute;
+    transform: rotate(45deg);
+    /* right: 10vmin; */
+}
+
+.persuassion > span{
+    position: absolute;
+    transform: rotate(-45deg);
+    padding-bottom: 1vmin;
+}
+
+.card >img {
+    height: 16vmin;
+}
+
+.agent {
+    background-color: rgb(245, 217, 181);
+    height: 5vmin;
+}
+
+.reveal {
+    background-color: rgb(9, 4, 116);
+    height: 4.5vmin;
+}
+
+.reveal > p {
+    color: white
 }

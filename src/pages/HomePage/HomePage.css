@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Dune_Rise;
+    src: url("../../fonts/Dune_Rise.ttf");
+}
+
+h1 {
+    font-family: Dune_Rise;
+    font-size: 16vmin;
+}

@@ -14,7 +14,7 @@ export default function PlayerDeck({player}) {
                 <button onClick={() => setShowModal('none')}>X</button>
                 <ul>{player.hand.map((card) => <Card card={card}/>)}</ul>
             </div>
-            <button onClick={() => setShowModal('block')} className="hand">Open</button>
+            <button onClick={() => setShowModal('inline')} className="hand">Open</button>
             <div className="deck">Deck</div>
         </>
     )

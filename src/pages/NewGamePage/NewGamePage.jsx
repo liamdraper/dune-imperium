@@ -32,7 +32,7 @@ export default function NewGamePage() {
         const player = await addPlayer(playerData);
         const gameData = {
             name:'Game 1', 
-            turn: 1.0, 
+            turn: 1.1, 
             player: player._id, 
             conflictDeck: 
             [conflictDeck[0]],

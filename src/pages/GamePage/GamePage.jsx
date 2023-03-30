@@ -27,7 +27,7 @@ export default function GamePage() {
             setGame(game);
         }
         getGame();
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         async function getPlayer() {
@@ -35,7 +35,7 @@ export default function GamePage() {
             setPlayer(player)
         }
         getPlayer();
-    }, []);
+    }, [id]);
 
     //Game Logic
 
@@ -56,7 +56,7 @@ export default function GamePage() {
             }
             player.hand.push(player.deck.pop());
         }
-        game.turn = 2;
+        // game.turn = 2;
     }
 
     // Implementation of Fisher–Yates shuffle
@@ -85,7 +85,7 @@ export default function GamePage() {
                 <CHOAM />
                 <Factions />
                 <Cities />
-                <Deserts game={game} setGame={setGame}/>
+                <Deserts game={game} setGame={setGame} player={player} setPlayer={setPlayer}/>
                 <Combat game={game}/>
                 <ScoreTrack />
                 <RivalComponenets />

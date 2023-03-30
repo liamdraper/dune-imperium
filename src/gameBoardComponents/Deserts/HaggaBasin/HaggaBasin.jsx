@@ -7,17 +7,24 @@ export default function HaggaBasin({game, setGame, player, setPlayer}) {
     
 
     function handleClick() {
-        if (game.boardLocations[20].taken === false) {
-            const updatedGame = {...game};
+        // Can only send agent if requirements are met
+        if (game.boardLocations[20].taken === false && player.water >= 1) {
             // Update board space to true (taken)
+            const updatedGame = {...game};
             updatedGame.boardLocations[20].taken = true;
-            // const updatedPlayer = {...player};
-            // updatedPlayer.water
-            // Apply cost
-            setPlayer(...player, player.water -= 1);
             setGame(updatedGame);
+            // // Apply cost
+            const updatedPlayer = {...player};
+            updatedPlayer.water -= 1;
+            console.log(updatedPlayer)
+            setPlayer(updatedPlayer, () => console.log(player));
             // Set background color
             setOccupied('green');
+            // Gain resources for going here
+            player.spice += 2;
+            // Add accumulated spice from board
+            // player.spice += board.boardLocations[20].spice
+            //board.boardLocations[20] = 0
         }
     }
 
@@ -25,9 +32,8 @@ export default function HaggaBasin({game, setGame, player, setPlayer}) {
         <>
             <h3 id={"location-name"}>Hagga Basin</h3>
             <div id="location" onClick={handleClick} style={{backgroundColor: occupied}}></div>
-            {/* <button id="location" onClick={handleClick}>
-                <h3 id={"location-name"}>Hagga Basin</h3>
-            </button> */}
+            {/* Give player option to go to combat space */}
+            {/* <button>Crossed swords</button> */}
         </>
     )
 }

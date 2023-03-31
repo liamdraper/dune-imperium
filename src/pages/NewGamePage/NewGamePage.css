@@ -3,12 +3,40 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    z-index: 1000;
+    background-color: rgb(43, 43, 43);
     height: 80vmin;
     width: 120vmin;
+    border: 2vmin solid black;
+    border-radius: 1vmin;
+}
+
+.modal > h1 {
+    color: white;
+}
+
+.profile-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vmin;
+}
+
+.profile-list > li > img {
+    height: 12vmin;
+    border: .5vmin solid rgb(36, 133, 212);
+    border-radius: 1vmin;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.profile-list > li > img.selected-profile {
+    opacity: 1;
 }
 
 .leaders-list {
     position: relative;
+}
+
+.left-button, .right-button {
 }

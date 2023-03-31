@@ -3,7 +3,7 @@ import PlayerDeck from "./PlayerDeck/PlayerDeck";
 import "./PlayerComponents.css";
 import { useEffect } from "react";
 
-export default function PlayerComponenets({game, player}) {
+export default function PlayerComponenets({game, player, setAvailSpaces}) {
 
 
     function handlePlaceAgent() {
@@ -26,7 +26,7 @@ export default function PlayerComponenets({game, player}) {
                     <button>End Turn</button>
                     <button>Reveal</button>
                     <PlayerPieces />
-                <PlayerDeck game={game} player={player}/>
+                <PlayerDeck game={game} player={player} setAvailSpaces={setAvailSpaces}/>
             </div>
         </>
     )

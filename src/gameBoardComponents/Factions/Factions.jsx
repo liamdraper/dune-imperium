@@ -8,7 +8,6 @@ export default function Factions() {
     return (
         <>  
             <div className={"factions"}>
-                <h2>Factions</h2>
                 <Emperor />
                 <SpacingGuild />
                 <BeneGesserit />

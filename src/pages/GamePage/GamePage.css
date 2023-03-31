@@ -5,4 +5,41 @@
     height: 85vmin;
     width: 190vmin;
     margin-left: 3vmin;
+    background-image: url('../../background-images/board-background.png');
+    background-size: cover;
+    border: 1vmin solid rgb(118, 74, 38);
+    border-radius: 1vmin;
+    color: white;
+}
+
+.board-space {
+}
+
+.board-space > h3 {
+    color: white;
+    font-size: 2vmin;
+    bottom: 8vmin;
+    margin-bottom: 0;
+    padding-right: 10vmin;
+}
+
+.board-space > div {
+    background-color: rgb(42, 42, 42);
+    height: 10vmin;
+    width: 20vmin;
+    display: flex;
+}
+
+
+.board-space > div > img {
+    height: 70%;
+    width: 50%;
+}
+
+.city-icon {
+  height: 3vmin;
+  width: 3vmin;
+  background-color: rgb(106, 15, 176);
+  border-radius: 50%;
+  position: absolute;
 }

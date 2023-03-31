@@ -4,8 +4,10 @@ import Wealth from "./Wealth/Wealth";
 export default function BoardSpaces() {
     return (
         <>
-            <Conspire />
-            <Wealth />
+            <div className="board-spaces">
+                <Conspire />
+                <Wealth />
+            </div>
         </>
     )
 }

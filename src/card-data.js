@@ -49,7 +49,7 @@ export const leaders = [
         signetRingAbility: {name: "Manufacturing", description: "Gain 1 solari."}
     },
     {
-        name: 'Helena Richese',
+        name: 'Countess Helena Richese',
         difficulty: 2,
         house: "House Richese",
         leaderAbility: {name: "Eyes Everywhere", description: "Enemy agents don't block your agents at green or purple board spaces."},
@@ -92,7 +92,8 @@ export const starterDeck = [
     {
         name: 'Dune, the Desert Planet',
         faction: null,
-        agentIcon: ['CHOAM', 'deserts'],
+        agentIcon: ['CHOAM', 'Deserts'],
+        boardLocations: ['Sell Melange', 'Secure Contract', 'The Great Flat', 'Hagga Basin', 'Imperial Basin'],
         agentBox: null,
         revealBox: 'Gain 1 persuassion',
         persuassionCost: null,

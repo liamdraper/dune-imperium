@@ -1,9 +1,17 @@
 import "./HaggaBasin.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export default function HaggaBasin({game, setGame, player, setPlayer}) {
+export default function HaggaBasin({game, setGame, player, setPlayer, availSpaces}) {
 
+    const div = useRef();
     const [occupied, setOccupied] = useState('white');
+
+    useEffect(() => {
+        if (availSpaces && availSpaces.toString().includes('The Great Flat')) {
+            div.current.className="highlightBoardSpace";
+        }
+        else div.current.className=""
+    }, [availSpaces])
     
 
     function handleClick() {
@@ -31,7 +39,7 @@ export default function HaggaBasin({game, setGame, player, setPlayer}) {
     return (
         <>
             <h3 id={"location-name"}>Hagga Basin</h3>
-            <div id="location" onClick={handleClick} style={{backgroundColor: occupied}}></div>
+            <div ref={div} onClick={handleClick} style={{backgroundColor: occupied}}></div>
             {/* Give player option to go to combat space */}
             {/* <button>Crossed swords</button> */}
         </>

@@ -4,7 +4,7 @@ import Carthag from "./Carthag/Carthag";
 import Arrakeen from "./Arakeen/Arakeen";
 import "./Cities.css"
 
-export default function Cities() {
+export default function Cities({availSpaces}) {
     return (
         <>
             <div className="cities" id="Cities">
@@ -13,7 +13,7 @@ export default function Cities() {
                     <SietchTabr />
                     <ResearchStation />
                     <Carthag />
-                    <Arrakeen />
+                    <Arrakeen availSpaces={availSpaces}/>
                 </div>
             </div>
         </>

@@ -2,21 +2,30 @@ import "./NewGamePage.css";
 import { leaders } from "../../card-data";
 import { starterDeck } from "../../card-data";
 import { conflictDeck } from "../../card-data";
+import LeaderProfileCard from "../../components/LeaderProfileCard/LeaderProfileCard";
 import LeaderCard from "../../components/Modal/LeaderCard/LeaderCard";
 import { useState } from "react";
 import { addGame } from "../../utilities/games-api";
 import { addPlayer } from "../../utilities/players-api";
 import { Link, useNavigate } from 'react-router-dom';
+// import profileLeader from "../../card-images/Paul Atreides-headshot.png";
+import { IconContext } from "react-icons";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 export default function NewGamePage() {
 
     const [page, setPage] = useState(1);
-    const [leaderPick, setLeaderPick] = useState(leaders[0]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [leaderProfile, setLeaderProfile] = useState("");
     const navigate = useNavigate();
+
+    // console.log(leaders[0])
+    // const leaderProfileImg = require(`../../card-images/${leaders[].name}-headshot.png`);s
 
     async function handleGameStart() {
         const playerData = {
-            leader: leaderPick,
+            leader: leaders[selectedIndex],
             color: 'green',
             victoryPoints: 0,
             spice: 0,
@@ -32,53 +41,53 @@ export default function NewGamePage() {
         const player = await addPlayer(playerData);
         const gameData = {
             name:'Game 1', 
-            turn: 1.1, 
+            turn: 1, 
             player: player._id, 
             conflictDeck: 
             [conflictDeck[0]],
-            boardLocations: [ {name: 'highCouncil', taken: false}, {name: 'hallOfOratory', taken: false}, {name: 'mentat', taken: false}, {name: 'rallyTroops', taken: false}, {name: 'swordmaster', taken: false}, {name: 'sellMelange', taken: false}, {name: 'secureContract', taken: false}, {name: 'conspire', taken: false}, {name: 'wealth', taken: false}, {name: 'heighliner', taken: false}, {name: 'foldspace', taken: false}, {name: 'selectiveBreeding', taken: false}, {name: 'secrets', taken: false}, {name: 'hardyWarriors', taken: false}, {name: 'stillsuits', taken: false}, {name: 'sietchTabr', taken: false}, {name: 'researchStation', taken: false}, {name: 'carthag', taken: false}, {name: 'arrakeen', taken: false}, {name: 'theGreatFlat', taken: false}, {name: 'Hagga Basin', taken: false}, {name: 'imperialBasin', taken: false}]
+            boardLocations: [ {name: 'High Council', taken: false}, {name: 'Hall Of Oratory', taken: false}, {name: 'Mentat', taken: false}, {name: 'Rally Troops', taken: false}, {name: 'Swordmaster', taken: false}, {name: 'Sell Melange', taken: false}, {name: 'Secure Contract', taken: false}, {name: 'Conspire', taken: false}, {name: 'Wealth', taken: false}, {name: 'Heighliner', taken: false}, {name: 'Foldspace', taken: false}, {name: 'SelectiveBreeding', taken: false}, {name: 'Secrets', taken: false}, {name: 'Hardy Warriors', taken: false}, {name: 'Stillsuits', taken: false}, {name: 'Sietch Tabr', taken: false}, {name: 'Research Station', taken: false}, {name: 'Carthag', taken: false}, {name: 'Arrakeen', taken: false}, {name: 'The Great Flat', taken: false}, {name: 'Hagga Basin', taken: true}, {name: 'Imperial Basin', taken: false}]
         };
         const game = await addGame(gameData);
         navigate(`/game/${game._id}`);
     }
 
-    const [currentCard, setCurrentCard] = useState(0);
     const length = leaders.length;
-    console.log(length);
-
 
     function prevCard(){
-        setCurrentCard(currentCard === 0 ? length - 1 : currentCard - 1);
+        setSelectedIndex(selectedIndex === 0 ? length - 1 : selectedIndex - 1);
     }
 
     function nextCard() {
-        setCurrentCard(currentCard === length - 1 ? 0 : currentCard + 1);
+        setSelectedIndex(selectedIndex === length - 1 ? 0 : selectedIndex + 1);
     }
 
     if (page === 1) {
         return (
             <div className="modal">
-                <h1>Pick Leader</h1>
-                <section><button onClick={() => setPage(page-1)}></button>Page:{page}<button onClick={() => setPage(page+1)}></button></section>
-                <ul className="leaders-list">
-                    <button onClick={prevCard}> Left </button>
-                    <button onClick={nextCard}> Right </button>
-                    {leaders.map((l, index) => <LeaderCard currentCard={currentCard} setLeaderPick={setLeaderPick} leader={l} index={index}/>)}
+                <button onClick={() => setPage(page+1)}>Next</button>
+                <h1>CHOOSE YOUR LEADER</h1>
+                <ul className="profile-list">
+                    {leaders.map((l, index) => <LeaderProfileCard leader={l} index={index} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>)}
+                    {/* // <li onClick={() => setSelectedIndex(index)} ><img className={index === selectedIndex ? 'selected-profile' : ''} src={''} alt=""></img></li>) */}
                 </ul>
-                <h1>Pick Color</h1>
-                <select>
-                    <option>Blue</option>
-                    <option>Red</option>
-                    <option>Green</option>
-                </select>
+                <ul className="leaders-list">
+                    <IconContext.Provider value={{ size: "5vmin" }}>
+                        <div>
+                            <BsFillArrowLeftCircleFill onClick={prevCard}/> 
+                            <BsFillArrowRightCircleFill onClick={nextCard}/>
+                        </div>
+                    </IconContext.Provider>
+                    {leaders.map((l, index) => <LeaderCard selectedIndex={selectedIndex} leader={l} index={index}/>)}
+                </ul>
             </div>
         )
     }
+
     if (page === 2) {
         return (
             <div className="modal">
                 <h1>Pick two rivals</h1>
-                <section><button onClick={() => setPage(page-1)}></button>Page:{page}<button onClick={() => setPage(page+1)}></button></section>
+                <section><button onClick={() => setPage(page-1)}>Previous</button>Page:{page}<button onClick={() => setPage(page+1)}></button></section>
                 <Link onClick={handleGameStart}>Start game</Link>
             </div>
         )

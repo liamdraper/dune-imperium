@@ -20,6 +20,7 @@ export default function GamePage() {
     const [game, setGame] = useState(null);
     const [player, setPlayer] = useState(null);
     const { id } = useParams();
+    const [availSpaces, setAvailSpaces] = useState(null);
 
     useEffect(() => {
         async function getGame() {
@@ -84,12 +85,12 @@ export default function GamePage() {
                 <LandsraadCouncil />
                 <CHOAM />
                 <Factions />
-                <Cities />
-                <Deserts game={game} setGame={setGame} player={player} setPlayer={setPlayer}/>
+                <Cities availSpaces={availSpaces}/>
+                <Deserts game={game} setGame={setGame} player={player} setPlayer={setPlayer} availSpaces={availSpaces}/>
                 <Combat game={game}/>
                 <ScoreTrack />
                 <RivalComponenets />
-                <PlayerComponenets game={game} player={player}/>
+                <PlayerComponenets game={game} player={player} setAvailSpaces={setAvailSpaces}/>
             </div>
     </>
     )

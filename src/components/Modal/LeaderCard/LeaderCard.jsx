@@ -3,12 +3,20 @@ import { useState, useRef, useEffect } from "react";
 import classNames from 'classnames';
 import Leader from "../../../card-images/leader.png";
 
-export default function LeaderCard({ leader, setLeaderPick, index, currentCard }) {
+export default function LeaderCard({ leader, index, selectedIndex}) {
 
     const [selected, setSelected] = useState(false);
+    const [leaderImg, setLeaderImg] = useState('');
     const node = useRef();
-    const liClasses = classNames('leader-card', `${index === currentCard ? 'active' : ''}`);
-    console.log(index);
+    const liClasses = classNames('leader-card', `${index === selectedIndex ? 'active' : ''}`);
+    
+    useEffect(() => {
+        async function getImg() {
+            const img = await require(`../../../card-images/${leader.name}.png`);
+            setLeaderImg(img);
+        }
+        getImg();
+    }, [])
 
     function handleClick(e) {
         if (node.current.contains(e.target)) {
@@ -26,20 +34,19 @@ export default function LeaderCard({ leader, setLeaderPick, index, currentCard }
 
     return(
         <li ref={node} class={liClasses}>
-            <div className="leader-name"><h3>{leader.name}</h3></div>
-            <div><h4>{leader.house}</h4></div>
-            <img src={Leader} alt="" />
+            <div className="leader-name">{leader.name}</div>
+            <div className="leader-house">{leader.house}</div>
+            <img src={leaderImg} alt="" />
             <div className={"abilities"}>
-                <div>
+                <div className={"leader-ability"}>
                     <h5>{leader.leaderAbility.name}</h5>
                     <p></p>
                 </div>
-                <div>
+                <div className={"ring-ability"}>
                     <h5>{leader.signetRingAbility.name}</h5>
                     <p></p>
                 </div>
             </div>
-            <button onClick={() => setSelected(true)}>Select</button>
         </li>
     )
 }

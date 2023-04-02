@@ -1,6 +1,9 @@
 .rulesPage {
-    background-color: tan;
+    background-color: rgb(171, 133, 84);
     width: 170vmin;
-    height: 85vmin;
+    height: 90vmin;
     margin-left: 12vmin;
+    border: 1vmin solid black;
+    border-radius: 1vmin;
+
 }

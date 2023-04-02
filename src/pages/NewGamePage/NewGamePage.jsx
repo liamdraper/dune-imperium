@@ -19,10 +19,9 @@ export default function NewGamePage() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [leaderProfile, setLeaderProfile] = useState("");
     const [color, setColor] = useState('red');
+    const [rivals, setRivals] = useState([]);
+    const [gameName, setGameName] = useState(`Game ${Math.floor(Math.random() * 9000) + 1000}`);
     const navigate = useNavigate();
-
-    // console.log(leaders[0])
-    // const leaderProfileImg = require(`../../card-images/${leaders[].name}-headshot.png`);s
 
     async function handleGameStart() {
         const playerData = {
@@ -41,7 +40,7 @@ export default function NewGamePage() {
         };
         const player = await addPlayer(playerData);
         const gameData = {
-            name:'Game 1', 
+            name: gameName, 
             turn: 1, 
             player: player._id, 
             conflictDeck: 
@@ -73,16 +72,16 @@ export default function NewGamePage() {
                     <IconContext.Provider value={{ size: "5vmin" }}>
                         <div className="leaderButtons">
                             <BsFillArrowLeftCircleFill className="leftButton" onClick={prevCard}/> 
-                            <BsFillArrowRightCircleFill onClick={nextCard}/>
+                            <BsFillArrowRightCircleFill className="rightButton" onClick={nextCard}/>
                         </div>
                     </IconContext.Provider>
                     {leaders.map((l, index) => <LeaderCard selectedIndex={selectedIndex} leader={l} index={index}/>)}
                 </ul>
                 <ul className="colorPicker">
-                    <li><div onClick={() => setColor('red')} style={{backgroundColor: 'red'}}></div></li>
-                    <li><div onClick={() => setColor('blue')} style={{backgroundColor: 'blue'}}></div></li>
-                    <li><div onClick={() => setColor('green')} style={{backgroundColor: 'green'}}></div></li>
-                    <li><div onClick={() => setColor('orange')} style={{backgroundColor: 'orange'}}></div></li>
+                    <li><div className={color === 'red' ? 'colorActive' : ''} onClick={() => setColor('red')} style={{backgroundColor: 'red'}}></div></li>
+                    <li><div className={color === 'blue' ? 'colorActive' : ''} onClick={() => setColor('blue')} style={{backgroundColor: 'blue'}}></div></li>
+                    <li><div className={color === 'green' ? 'colorActive' : ''} onClick={() => setColor('green')} style={{backgroundColor: 'green'}}></div></li>
+                    <li><div className={color === 'orange' ? 'colorActive' : ''} onClick={() => setColor('orange')} style={{backgroundColor: 'orange'}}></div></li>
                 </ul>
                 <button className="nextPageButton" onClick={() => setPage(page+1)}>NEXT</button>
             </div>
@@ -92,11 +91,15 @@ export default function NewGamePage() {
     if (page === 2) {
         return (
             <div className="modal">
-                <h1>Pick two rivals</h1>
+                <h1>WHO ARE YOUR TWO RIVALS?</h1>
+                <ul className="profile-list">
+                    {/* leaders cant be paul or ariana or the leader already chosen by player */}
+                    {leaders.filter((l) => l.name !== leaders[selectedIndex].name && l.name !== 'Paul Atreides' && l.name !== 'Countess Ariana Thorvald').map((l, index) => <LeaderProfileCard leader={l} index={index} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>)}
+                </ul>
+                <input type="text" value={gameName} onChange={(e) => setGameName(e.target.value)}/>
                 <button onClick={() => setPage(page-1)}>Previous</button>
                 <Link onClick={handleGameStart}>Start game</Link>
             </div>
         )
     }
-
 }

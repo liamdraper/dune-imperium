@@ -46,9 +46,13 @@
     margin-right: 2vmin;
 }
 
+.leftButton, .rightButton {
+    cursor: pointer;
+}
+
 .nextPageButton {
     margin-left: 60vmin;
-    margin-top: 35vmin;
+    margin-top: 25vmin;
     height: 5vmin;
     width: 10vmin;
     font-size: 3vmin;
@@ -63,9 +67,10 @@
 .colorPicker > li > div {
     height: 6vmin;
     width: 6vmin;
-    border: .3vmin solid rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 .colorActive {
     border: .5vmin solid rgb(36, 133, 212);
+    border-radius: .5vmin;
 }

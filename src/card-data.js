@@ -4,56 +4,56 @@ export const leaders = [
         difficulty: 1,
         house: "House Atreides",
         leaderAbility: {name: "Prescience", description: "You may look at the top card of your deck at any time."},
-        signetRingAbility: {name: "Discipline", description: "card"}
+        signetRingAbility: {name: "Discipline", description: "Draw one card."}
     },
     {
         name: "Duke Leto Atreides",
         difficulty: 2,
         house: "House Atreides",
-        leaderAbility: {name: "Landsraad Popularity", description: "Sending an agent to a council board space costs you 1 solari less"},
-        signetRingAbility: {name: "Prudent Diplomacy", description: "Spend 1 spice to gain one influence with a Faction where an opponent has more influence than you."}
+        leaderAbility: {name: "Landsraad Popularity", description: "Sending an agent to a Landsraad Council board space costs you one solari less."},
+        signetRingAbility: {name: "Prudent Diplomacy", description: "Spend one spice to gain one influence with a Faction where an opponent has more influence than you."}
     },
     {
         name: "Baron Vladimir Harkonnen",
         difficulty: 3,
         house: "House Harkonnen",
-        leaderAbility: {name: "Masterstroke", description: "At start of game, secretly choose 2 Factions.  When you deploy 4+ troops to the Conflict in a turn, reveal your choices and gain one influence with each."},
-        signetRingAbility: {name: "Scheme", description: "Spend 1 solari to gain an intrigue card."}
+        leaderAbility: {name: "Masterstroke", description: "At start of game, secretly choose two Factions.  When you deploy 4+ troops to the Conflict in a turn, reveal your choices and gain one influence with each."},
+        signetRingAbility: {name: "Scheme", description: "Spend one solari to gain an intrigue card."}
     },
     {
         name: 'Glossu "The Beast" Rabban',
         difficulty: 1,
         house: "House Harkonnen",
-        leaderAbility: {name: "Arrakis Fiefdom", description: "You start the game with additional resources: 1 spice and 1 solari."},
+        leaderAbility: {name: "Arrakis Fiefdom", description: "You start the game with additional resources: one spice and one solari."},
         signetRingAbility: {name: "Brutality", description: "Gain one or two soldiers if you have at least one Faction Alliance."}
     },  
     {
         name: 'Earl Memnon Thorvald',
         difficulty: 1,
         house: "House Thorvald",
-        leaderAbility: {name: "Connections", description: "When you take a high council seat, gain one instrigue card."},
-        signetRingAbility: {name: "Spice Hoard", description: "Gain 1 spice."}
+        leaderAbility: {name: "Connections", description: "When you take a high council seat, gain one intrigue card."},
+        signetRingAbility: {name: "Spice Hoard", description: "Gain one spice."}
     },
     {
         name: 'Countess Ariana Thorvald',
         difficulty: 3,
         house: "House Thorvald",
         leaderAbility: {name: "Spice Addict", description: "Whenever you harvest spice, gain one less and draw a card."},
-        signetRingAbility: {name: "Hidden Resevoir", description: "Gain 1 water."}
+        signetRingAbility: {name: "Hidden Resevoir", description: "Gain one water."}
     },
     {
         name: 'Count Ilban Richese',
         difficulty: 1,
         house: "House Richese",
         leaderAbility: {name: "Ruthless Neogtiator", description: "Whenever you pay solari for the cost of a board space, draw a card."},
-        signetRingAbility: {name: "Manufacturing", description: "Gain 1 solari."}
+        signetRingAbility: {name: "Manufacturing", description: "Gain one solari."}
     },
     {
         name: 'Countess Helena Richese',
         difficulty: 2,
         house: "House Richese",
         leaderAbility: {name: "Eyes Everywhere", description: "Enemy agents don't block your agents at green or purple board spaces."},
-        signetRingAbility: {name: "Manipulate", description: "Remove and replace a card in the Imperium Row.  During your Reveal turn this round, you may aquire the rmeoved card for 1 influence less"}
+        signetRingAbility: {name: "Manipulate", description: "Remove and replace a card in the Imperium Row.  During your Reveal turn this round, you may aquire the rmeoved card for one influence less."}
     },
 ]
 

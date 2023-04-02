@@ -3,7 +3,7 @@
     border: 1vmin solid black;
     border-radius: 1vmin;
     margin: 2vmin;
-    height: 40vmin;
+    height: 43vmin;
     width: 57vmin;
     opacity: 0;
     position: absolute;
@@ -50,13 +50,17 @@
     flex: 1;
 }
 
-.leader-ability > h5, .ring-ability > h5 {
-    margin: 0;
-}
-
 .ring-ability {
     color: white;
     background-color: black;
     flex: 1;
     border: .1vmin solid rgb(168, 168, 168);
+}
+
+.leader-ability > h5, .ring-ability > h5 {
+    margin: 0;
+}
+
+.leader-ability > p, .ring-ability > p {
+    font-size: 1.2vmin;
 }

@@ -103,14 +103,14 @@ export default function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      dune.rotation.x += 0.0005;
-      dune.rotation.y += 0.0005;
+      dune.rotation.x += 0.001;
+      dune.rotation.y += 0.001;
       
-      moon1.rotation.x += 0.0002;
-      moon1.rotation.y += 0.0002;
+      moon1.rotation.x -= 0.001;
+      moon1.rotation.y -= 0.001;
 
-      moon2.rotation.x += 0.0002;
-      moon2.rotation.y += 0.0002;
+      moon2.rotation.x += 0.001;
+      moon2.rotation.y += 0.001;
 
       renderer.render(scene, camera);
     };

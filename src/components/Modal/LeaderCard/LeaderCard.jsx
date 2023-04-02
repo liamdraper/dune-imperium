@@ -40,11 +40,13 @@ export default function LeaderCard({ leader, index, selectedIndex}) {
             <div className={"abilities"}>
                 <div className={"leader-ability"}>
                     <h5>{leader.leaderAbility.name}</h5>
-                    <p></p>
+                    <hr></hr>
+                    <p>{leader.leaderAbility.description}</p>
                 </div>
                 <div className={"ring-ability"}>
                     <h5>{leader.signetRingAbility.name}</h5>
-                    <p></p>
+                    <hr></hr>
+                    <p>{leader.signetRingAbility.description}</p>
                 </div>
             </div>
         </li>

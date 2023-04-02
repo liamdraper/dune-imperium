@@ -1,0 +1,21 @@
+.pdfReader {
+    margin-top: 4vmin
+}
+
+.pdfReader canvas {
+    z-index: 9999;
+    position: absolute;
+    right: 20px;
+    margin-top: 4vmin;
+}
+
+.pdfButtons {
+    padding-top: 3vmin;
+}
+
+.pdfPages {
+    display: flex;
+    flex-direction: row;
+    gap: 4vmin;
+    margin-left: 12.5vmin;
+}

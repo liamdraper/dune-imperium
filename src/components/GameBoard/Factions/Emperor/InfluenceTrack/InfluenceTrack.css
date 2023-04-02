@@ -1,0 +1,24 @@
+
+.influenceTrack {
+    margin: 1vmin;
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: .3vmin; 
+}
+
+.influenceTrack > div {
+    flex: 1;
+}
+
+.track-token {
+    background-color: goldenrod;
+}
+
+.track-basic {
+    background-color: gray;
+}
+
+.track-start {
+    background-color: black;
+}

@@ -1,0 +1,6 @@
+.playerComponentsGrid {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    border: .5vmin solid black;
+    margin: 2vmin;
+}

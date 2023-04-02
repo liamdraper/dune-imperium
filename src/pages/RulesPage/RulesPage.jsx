@@ -1,10 +1,12 @@
-import PDFReader from "../../components/PDFReader/PDFReader"
+import PDFReader from "../../components/PDFReader/PDFReader";
+import "./RulesPage.css";
 
 export default function RulesPage() {
     return (
         <>
-            <h1>Rules</h1>
-            <PDFReader />
+            <div className="rulesPage">
+                <PDFReader />
+            </div>
         </>
     )
 }

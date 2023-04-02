@@ -1,0 +1,6 @@
+.choamGrid {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    margin: 2vmin;
+    border: .2vmin solid black; 
+}

@@ -18,6 +18,7 @@ export default function NewGamePage() {
     const [page, setPage] = useState(1);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [leaderProfile, setLeaderProfile] = useState("");
+    const [color, setColor] = useState('red');
     const navigate = useNavigate();
 
     // console.log(leaders[0])
@@ -26,7 +27,7 @@ export default function NewGamePage() {
     async function handleGameStart() {
         const playerData = {
             leader: leaders[selectedIndex],
-            color: 'green',
+            color: color,
             victoryPoints: 0,
             spice: 0,
             water: 1,
@@ -64,21 +65,26 @@ export default function NewGamePage() {
     if (page === 1) {
         return (
             <div className="modal">
-                <button onClick={() => setPage(page+1)}>Next</button>
                 <h1>CHOOSE YOUR LEADER</h1>
                 <ul className="profile-list">
                     {leaders.map((l, index) => <LeaderProfileCard leader={l} index={index} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>)}
-                    {/* // <li onClick={() => setSelectedIndex(index)} ><img className={index === selectedIndex ? 'selected-profile' : ''} src={''} alt=""></img></li>) */}
                 </ul>
                 <ul className="leaders-list">
                     <IconContext.Provider value={{ size: "5vmin" }}>
-                        <div>
-                            <BsFillArrowLeftCircleFill onClick={prevCard}/> 
+                        <div className="leaderButtons">
+                            <BsFillArrowLeftCircleFill className="leftButton" onClick={prevCard}/> 
                             <BsFillArrowRightCircleFill onClick={nextCard}/>
                         </div>
                     </IconContext.Provider>
                     {leaders.map((l, index) => <LeaderCard selectedIndex={selectedIndex} leader={l} index={index}/>)}
                 </ul>
+                <ul className="colorPicker">
+                    <li><div onClick={() => setColor('red')} style={{backgroundColor: 'red'}}></div></li>
+                    <li><div onClick={() => setColor('blue')} style={{backgroundColor: 'blue'}}></div></li>
+                    <li><div onClick={() => setColor('green')} style={{backgroundColor: 'green'}}></div></li>
+                    <li><div onClick={() => setColor('orange')} style={{backgroundColor: 'orange'}}></div></li>
+                </ul>
+                <button className="nextPageButton" onClick={() => setPage(page+1)}>NEXT</button>
             </div>
         )
     }
@@ -87,7 +93,7 @@ export default function NewGamePage() {
         return (
             <div className="modal">
                 <h1>Pick two rivals</h1>
-                <section><button onClick={() => setPage(page-1)}>Previous</button>Page:{page}<button onClick={() => setPage(page+1)}></button></section>
+                <button onClick={() => setPage(page-1)}>Previous</button>
                 <Link onClick={handleGameStart}>Start game</Link>
             </div>
         )

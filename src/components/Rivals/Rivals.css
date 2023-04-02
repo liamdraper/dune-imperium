@@ -1,0 +1,6 @@
+.rivals {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    border: .5vmin solid black;
+    margin: 2vmin;
+}

@@ -38,5 +38,34 @@
     position: relative;
 }
 
-.left-button, .right-button {
+.leaderButtons {
+    margin-right: 45vmin;
+}
+
+.leaderButtons > .leftButton {
+    margin-right: 2vmin;
+}
+
+.nextPageButton {
+    margin-left: 60vmin;
+    margin-top: 35vmin;
+    height: 5vmin;
+    width: 10vmin;
+    font-size: 3vmin;
+}
+
+.colorPicker {
+    margin-left: 70vmin;
+    display: flex;
+    gap: 1vmin;
+}
+
+.colorPicker > li > div {
+    height: 6vmin;
+    width: 6vmin;
+    border: .3vmin solid rgb(0, 0, 0);
+}
+
+.colorActive {
+    border: .5vmin solid rgb(36, 133, 212);
 }

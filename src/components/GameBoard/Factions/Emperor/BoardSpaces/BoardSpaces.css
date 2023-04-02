@@ -1,0 +1,11 @@
+.boardSpaces {
+    flex: 1;
+    background-color: gray;
+    margin: 1vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+.boardSpaces > div {
+    flex: 1;
+}

@@ -1,9 +1,0 @@
-.emperor {
-    display: flex;
-    flex-direction: row;
-}
-
-.emperor > h2 {
-    transform: rotate(-90deg);
-    font-size: 5vmin;
-}

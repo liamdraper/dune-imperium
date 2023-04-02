@@ -1,0 +1,9 @@
+nav {
+    font-size: 4vmin;
+}
+
+nav > a {
+    color: rgb(52, 129, 197);
+    text-decoration: none;
+  }
+

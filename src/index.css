@@ -20,6 +20,7 @@
 }
 
 body {
+  color: white;
   /* margin: 0; */
   font-family: Gothic;
   -webkit-font-smoothing: antialiased;
@@ -83,9 +84,14 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
+  background-color: rgb(62, 62, 62);
+  color: white;
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  width: 80vmin;
+  height: 35vmin;
+  margin-top: 20vmin;
+  margin-left: 60vmin;
 }
 
 p.error-message {
@@ -98,6 +104,21 @@ form {
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
+}
+
+form > button {
+  background-color: rgb(25, 125, 195);
+  border: none;
+  cursor: pointer;
+}
+
+.authButton {
+  background-color: rgb(25, 125, 195);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50vmin;
+  left: 70vmin;
 }
 
 label {
@@ -124,4 +145,17 @@ input:focus {
   height: 6vmin;
   width: 6vmin;
   border: .2vmin solid black;
+}
+
+button {
+  background-color: rgb(30, 125, 172);
+  color: white;
+  border: none;
+  font-family: Gothic;
+  border-radius: 1vmin;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
 }

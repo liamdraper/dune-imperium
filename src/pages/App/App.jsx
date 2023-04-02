@@ -15,6 +15,7 @@ import dunePic from '../../background-images/Dune.png';
 import moon1Pic from "../../background-images/moon1.png"
 import moon2Pic from "../../background-images/moon2.png"
 import background from "../../background-images/space-background.png";
+import nebula from "../../background-images/nebula.png";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -43,17 +44,17 @@ export default function App() {
         map: duneTexture,
       })
     );
-    dune.position.set(0, 0, 0);
+    dune.position.set(10, -17, 0);
     scene.add(dune);
 
     const moon1Texture = new THREE.TextureLoader().load(moon1Pic);
     const moon1 = new THREE.Mesh(
-      new THREE.SphereGeometry(3, 32, 32),
+      new THREE.SphereGeometry(7, 32, 32),
       new THREE.MeshStandardMaterial( {
         map: moon1Texture,
       })
     );
-    moon1.position.set(15, 10, 10);
+    moon1.position.set(0, 0, -10);
     scene.add(moon1);
 
     const moon2Texture = new THREE.TextureLoader().load(moon2Pic);
@@ -63,10 +64,21 @@ export default function App() {
         map: moon2Texture,
       })
     );
-    moon2.position.set(-8, -8, 20);
+    moon2.position.set(-10, -5, 20);
     scene.add(moon2);
 
+    // const cloudTexture = new THREE.TextureLoader().load(nebula);
+    // const cloud = new THREE.Mesh(
+    //   new THREE.PlaneGeometry(500, 500, 500),
+    //   new THREE.MeshLambertMaterial({
+    //     map: cloudTexture,
+    //     transparent: true
+    //   })
+    //   for (let p=0; p<50; p++) {
 
+    //   }
+
+    // )
     
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
@@ -91,8 +103,8 @@ export default function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      dune.rotation.x += 0.0002;
-      dune.rotation.y += 0.0002;
+      dune.rotation.x += 0.0005;
+      dune.rotation.y += 0.0005;
       
       moon1.rotation.x += 0.0002;
       moon1.rotation.y += 0.0002;
@@ -109,8 +121,8 @@ export default function App() {
 
 
   return (
-    <main className="App" id="canvas-container">
-      <canvas ref={canvasRef} />;
+    <main className="App">
+      <canvas ref={canvasRef} />
       { user ?
           <>
             <NavBar user={user} setUser={setUser} />

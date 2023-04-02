@@ -5,6 +5,8 @@ import pdf from "./DUNE_IMPERIUM_Rules_2020_10_26.pdf";
 import "./PDFReader.css"
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export default function PDFReader() {
     const [numPages, setNumPages] = useState(null);

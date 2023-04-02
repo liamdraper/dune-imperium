@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as gamesAPI from "../../utilities/games-api";
 import { Link } from 'react-router-dom';
+import "./LoadGamePage.css";
 
 export default function LoadGamePage() {
 
@@ -14,11 +15,19 @@ export default function LoadGamePage() {
         getGames();
     }, [])
 
+    function handleClick() {
+        
+    }
+
     return(
         <>
-            <ul>
-                {games.map((game) => <li><Link to={`/game/${game._id}`}>{game.name}</Link></li>)}
-            </ul>
+            <div className="loadGamePage">
+                <ul>
+                    {games.map((game) => <li><button onClick={handleClick}>{game.name}</button></li>)}
+                </ul>
+                {/* <div className=""></div> */}
+            </div>
         </>
     )
 }
+// {games.map((game) => <li><Link to={`/game/${game._id}`}>{game.name}</Link></li>)}

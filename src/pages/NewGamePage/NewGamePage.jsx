@@ -4,14 +4,13 @@ import { starterDeck } from "../../card-data";
 import { conflictDeck } from "../../card-data";
 import LeaderProfileCard from "../../components/LeaderProfileCard/LeaderProfileCard";
 import LeaderCard from "../../components/Modal/LeaderCard/LeaderCard";
+import RivalProfileCard from "../../components/RivalProfileCard/RivalProfileCard";
 import { useState } from "react";
 import { addGame } from "../../utilities/games-api";
 import { addPlayer } from "../../utilities/players-api";
 import { Link, useNavigate } from 'react-router-dom';
-// import profileLeader from "../../card-images/Paul Atreides-headshot.png";
 import { IconContext } from "react-icons";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 export default function NewGamePage() {
 
@@ -19,7 +18,8 @@ export default function NewGamePage() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [leaderProfile, setLeaderProfile] = useState("");
     const [color, setColor] = useState('red');
-    const [rivals, setRivals] = useState([]);
+    const [rival1, setRival1] = useState(null);
+    const [rival2, setRival2] = useState(null);
     const [gameName, setGameName] = useState(`Game ${Math.floor(Math.random() * 9000) + 1000}`);
     const navigate = useNavigate();
 
@@ -43,6 +43,7 @@ export default function NewGamePage() {
             name: gameName, 
             turn: 1, 
             player: player._id, 
+            rivals: [rival1, rival2],
             conflictDeck: 
             [conflictDeck[0]],
             boardLocations: [ {name: 'High Council', taken: false}, {name: 'Hall Of Oratory', taken: false}, {name: 'Mentat', taken: false}, {name: 'Rally Troops', taken: false}, {name: 'Swordmaster', taken: false}, {name: 'Sell Melange', taken: false}, {name: 'Secure Contract', taken: false}, {name: 'Conspire', taken: false}, {name: 'Wealth', taken: false}, {name: 'Heighliner', taken: false}, {name: 'Foldspace', taken: false}, {name: 'SelectiveBreeding', taken: false}, {name: 'Secrets', taken: false}, {name: 'Hardy Warriors', taken: false}, {name: 'Stillsuits', taken: false}, {name: 'Sietch Tabr', taken: false}, {name: 'Research Station', taken: false}, {name: 'Carthag', taken: false}, {name: 'Arrakeen', taken: false}, {name: 'The Great Flat', taken: false}, {name: 'Hagga Basin', taken: true}, {name: 'Imperial Basin', taken: false}]
@@ -92,13 +93,13 @@ export default function NewGamePage() {
         return (
             <div className="modal">
                 <h1>WHO ARE YOUR TWO RIVALS?</h1>
-                <ul className="profile-list">
+                <ul className="profile-list" id="rivals-list">
                     {/* leaders cant be paul or ariana or the leader already chosen by player */}
-                    {leaders.filter((l) => l.name !== leaders[selectedIndex].name && l.name !== 'Paul Atreides' && l.name !== 'Countess Ariana Thorvald').map((l, index) => <LeaderProfileCard leader={l} index={index} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>)}
+                    {leaders.filter((l) => l.name !== leaders[selectedIndex].name && l.name !== 'Paul Atreides' && l.name !== 'Countess Ariana Thorvald').map((l, index) => <RivalProfileCard leader={l} index={index} rival1={rival1} setRival1={setRival1} rival2={rival2} setRival2={setRival2}/>)}
                 </ul>
+                <button className="previousPageButton" onClick={() => setPage(page-1)}>PREVIOUS</button>
                 <input type="text" value={gameName} onChange={(e) => setGameName(e.target.value)}/>
-                <button onClick={() => setPage(page-1)}>Previous</button>
-                <Link onClick={handleGameStart}>Start game</Link>
+                <button className="startGame" onClick={handleGameStart}>START GAME</button>
             </div>
         )
     }

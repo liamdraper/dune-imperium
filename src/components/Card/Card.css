@@ -2,7 +2,7 @@
     border: 1vmin solid;
     border-radius: 1vmin;
     aspect-ratio:  63.5 / 88;
-    height: 30vmin;
+    height: 33vmin;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -13,7 +13,7 @@
 }
 
 .card.active {
-    border-color: blue;
+    border-color: rgb(36, 133, 212);
 }
 
 .card.inactive {

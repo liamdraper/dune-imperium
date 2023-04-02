@@ -2,7 +2,7 @@ import "./Card.css";
 import Jessica from "../../card-images/Jessica.png";
 import { useRef, useState, useEffect, useContext } from "react";
 import classNames from 'classnames';
-export default function Card({game, card, setAvailSpaces}) {
+export default function Card({game, card}) {
 
     const [highlighted, setHighlighted] = useState(false);
     const node = useRef();
@@ -13,19 +13,10 @@ export default function Card({game, card, setAvailSpaces}) {
             return;
         }
         setHighlighted(false);
-        setAvailSpaces([]);
     }
 
     function handleClickCard() {
         setHighlighted(true)
-        // Set available spaces 
-        const avail = game.boardLocations.filter((l) => l.taken === false).map((l) => l.name);
-        // FInd avaiable spaces that correspond with agent Icons
-        console.log(avail);
-        console.log(card.boardLocations);
-        const boardSpaces = avail.filter((l) => card.boardLocations.includes(l));
-        console.log(boardSpaces);
-        setAvailSpaces([boardSpaces]);
     }
     
     useEffect(() => {

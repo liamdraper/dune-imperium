@@ -6,7 +6,7 @@
     background-color: rgb(43, 43, 43);
     height: 80vmin;
     width: 120vmin;
-    border: 2vmin solid black;
+    border: 1.5vmin solid black;
     border-radius: 1vmin;
 }
 
@@ -73,4 +73,25 @@
 .colorActive {
     border: .5vmin solid rgb(36, 133, 212);
     border-radius: .5vmin;
+}
+
+.previousPageButton {
+    margin-right: 40vmin;
+    margin-top: 40vmin;
+    height: 5vmin;
+    width: 15vmin;
+    font-size: 3vmin;
+}
+
+.startGame {
+    height: 5vmin;
+    width: 18vmin;
+    font-size: 3vmin;
+    margin-left: 6vmin;
+}
+
+#rivals-list {
+    position: relative;
+    top: 15vmin;
+    left: 12vmin;
 }

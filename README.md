@@ -10,6 +10,6 @@ A web companion application for the Dune Imperium board game.  Users can choose 
 - [Info on Game](https://www.direwolfdigital.com/dune-imperium/)
 
 ## Technologies Used
-https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+![image]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E})
 
 ## Next Steps

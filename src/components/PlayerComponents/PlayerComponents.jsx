@@ -1,6 +1,6 @@
 import "./PlayerComponents.css";
 import Card from "../Card/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import * as gamesAPI from "../../utilities/games-api";
@@ -26,7 +26,7 @@ export default function PlayerComponents( {player, setPlayer, game, setGame}) {
     function handleClick() {
         console.log('game: ', game)
         const asdf = player;
-        console.log(asdf);
+        console.log('player', asdf);
         asdf.spice += 1;
         setPlayer(asdf)
     }

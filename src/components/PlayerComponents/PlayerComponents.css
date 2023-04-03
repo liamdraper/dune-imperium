@@ -5,6 +5,7 @@
     margin: 2vmin;
     display: flex;
     flex-direction: row;
+    gap: 1vmin;
 }
 
 .deck {
@@ -16,7 +17,7 @@
 .hand {
     border: .2vmin solid black;
     height: 6vmin;
-    width: 4vmin;
+    width: 6vmin;
 }
 
 .deck-modal {

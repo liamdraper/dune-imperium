@@ -1,10 +1,13 @@
 import "./Wealth.css";
+import { useState } from "react";
 
 export default function Wealth() {
+    const [taken, setTaken] = useState(false);
+
     return (
         <>
             <div className="boardSpace">
-                <div className="agentSpace"></div>
+                <div onClick={() => setTaken(!taken)} className="agentSpace" style={{backgroundColor: taken ? 'blue' : 'rgb(84, 84, 84)'}}></div>
                 <div className="spaceRewards"></div>
             </div>
         </>

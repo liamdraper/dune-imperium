@@ -4,3 +4,21 @@
     margin: 2vmin;
     border: .2vmin solid black;
 }
+
+.scoreTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmin;
+}
+
+.track1, .track2 {
+    cursor: pointer;
+}
+
+.track2 {
+    background-color: goldenrod;
+}
+
+.track1 {
+    background-color: rgb(167, 115, 52);
+}

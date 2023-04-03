@@ -1,11 +1,13 @@
 import SelectiveBreeding from "./SelectiveBreeding/SelectiveBreeding";
 import Secrets from "./Secrets/Secrets";
 
-export default function Decks() {
+export default function BoardSpaces() {
     return (
         <>
-            <SelectiveBreeding />
-            <Secrets />
+            <div className="boardSpaces">
+                <SelectiveBreeding />
+                <Secrets />
+            </div>
         </>
     )
 }

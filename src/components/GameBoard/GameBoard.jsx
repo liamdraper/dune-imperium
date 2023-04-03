@@ -7,7 +7,7 @@ import Conflict from "./Conflict/Conflict";
 import CHOAM from "./CHOAM/CHOAM";
 import ScoreTrack from "./ScoreTrack/ScoreTrack";
 
-export default function GameBoard() {
+export default function GameBoard({player, setPlayer}) {
     return(
         <>
             <div className="gameBoardGrid">
@@ -17,7 +17,7 @@ export default function GameBoard() {
                 <Deserts />
                 <Conflict />
                 <CHOAM />
-                <ScoreTrack />
+                <ScoreTrack player={player} setPlayer={setPlayer}/>
             </div>
         </>
     )

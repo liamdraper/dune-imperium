@@ -20,9 +20,9 @@ export default function PDFReader() {
         <>
             <div className="pdfReader">
                 <div className="pdfButtons">
-                    <BsFillArrowLeftCircleFill size={30} onClick={() => pageNumber === 1 ? setPageNumber(1) : setPageNumber(pageNumber - 1) }/> 
+                    <BsFillArrowLeftCircleFill className="leftPDFButton" size={30} onClick={() => pageNumber === 1 ? setPageNumber(1) : setPageNumber(pageNumber - 1) }/> 
                     &nbsp;&nbsp;&nbsp;
-                    <BsFillArrowRightCircleFill size={30}onClick={() => pageNumber === 20 ? setPageNumber(20) : setPageNumber(pageNumber + 1)}/>
+                    <BsFillArrowRightCircleFill className="rightPDFButton" size={30}onClick={() => pageNumber === 20 ? setPageNumber(20) : setPageNumber(pageNumber + 1)}/>
                 </div>
                 <div className="pdfPages">
                     <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>

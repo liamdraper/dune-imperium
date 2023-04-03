@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
     name: {type: String},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     turn: {type: Number},
     player: {type: Schema.Types.ObjectId, ref: 'Player'},
     rivals: {type: Array},

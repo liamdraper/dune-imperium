@@ -12,7 +12,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { IconContext } from "react-icons";
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
-export default function NewGamePage() {
+export default function NewGamePage({user}) {
 
     const [page, setPage] = useState(1);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -22,6 +22,8 @@ export default function NewGamePage() {
     const [rival2, setRival2] = useState(null);
     const [gameName, setGameName] = useState(`Game ${Math.floor(Math.random() * 9000) + 1000}`);
     const navigate = useNavigate();
+
+    console.log(user)
 
     async function handleGameStart() {
         const playerData = {
@@ -41,6 +43,7 @@ export default function NewGamePage() {
         const player = await addPlayer(playerData);
         const gameData = {
             name: gameName, 
+            user: user._id,
             turn: 1, 
             player: player._id, 
             rivals: [rival1, rival2],

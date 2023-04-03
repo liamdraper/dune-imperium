@@ -32,15 +32,13 @@ export default function GamePage() {
 
     if (!player || !game) return null;
 
-    console.log(player, game);
-
     return (
         <>
             <div className="gamePageGrid">
-                <GameBoard />
-                <Rivals />
+                <GameBoard player={player} setPlayer={setPlayer}/>
+                <Rivals game={game}/>
                 <GameCards />
-                <PlayerComponents game={game} player={player} setPlayer={setPlayer}/>
+                <PlayerComponents game={game} setGame={setGame} player={player} setPlayer={setPlayer}/>
             </div>
         </>
     )

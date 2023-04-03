@@ -16,3 +16,7 @@ export function getGame(id) {
 export function saveGame(savedGame) {
     return sendRequest(`${BASE_URL}/${savedGame._id}`, 'PUT', { savedGame });
 }
+
+export function deleteGame(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}

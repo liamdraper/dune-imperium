@@ -4,3 +4,14 @@
     border: .5vmin solid black;
     margin: 2vmin;
 }
+
+.rivals > ul {
+    display: flex;
+    gap: 5vmin;
+    justify-content: center;
+}
+
+.rivalImg > img {
+    height: 10vmin;
+    border-radius: 10%;
+} 

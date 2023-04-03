@@ -21,10 +21,11 @@
 }
 
 .title > ul > li {
-    margin: 2vmin;
+    margin: 5vmin;
 }
 
 .title > ul > li > a{
+    padding-top: .5vmin;
     display: block;
     background-color: rgb(30, 125, 172);
     color: white;

@@ -7,15 +7,15 @@
     flex-direction: column;
 }
 
-.emperor, .spacingGuild {
+.emperor, .spacingGuild, .beneGesserit, .fremen {
     display: flex;
     flex-direction: row;
     position: relative;
 }
 
-.emperor > h2, .spacingGuild > h2 {
+.emperor > h2, .spacingGuild > h2, .beneGesserit > h2, .fremen > h2 {
     position: absolute;
     transform: rotate(-90deg);
-    top: 14vmin;
+    top: 10vmin;
     right: 26vmin;
 }

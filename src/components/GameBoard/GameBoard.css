@@ -15,11 +15,19 @@
     flex-direction: row;
 }
 
+.boardSpace:hover {
+    transform: scale(1.1);
+}
+
 .agentSpace {
     flex: 1;
-    background-color: black;
+    cursor: pointer;
 }
 
 .spaceRewards {
     flex: 1;
+}
+
+#taken {
+    background-color: player.color;
 }

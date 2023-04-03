@@ -4,8 +4,10 @@ import Stillsuits from "./Stillsuits/Stillsuits";
 export default function BoardSpaces() {
     return (
         <>
-            <HardyWarriors />
-            <Stillsuits />
+            <div className="boardSpaces">
+                <HardyWarriors />
+                <Stillsuits />
+            </div>
         </>
     )
 }

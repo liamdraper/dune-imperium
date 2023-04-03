@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import * as gamesAPI from "../../utilities/games-api";
 import { Link } from 'react-router-dom';
 import "./LoadGamePage.css";
+import GameDetails from "../../components/GameDetails/GameDetails";
 
-export default function LoadGamePage() {
+export default function LoadGamePage({user}) {
 
     const [games, setGames] = useState([]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    
 
     useEffect(() => {
         async function getGames() {
@@ -13,20 +16,23 @@ export default function LoadGamePage() {
             setGames(gamesList)
         }
         getGames();
-    }, [])
-
-    function handleClick() {
-        
-    }
+        //bad?
+    })
 
     return(
         <>
+            {games.length ? 
             <div className="loadGamePage">
                 <ul>
-                    {games.map((game) => <li><button onClick={handleClick}>{game.name}</button></li>)}
+                    {games.filter((game) => game.user === user._id).map((game, index) => <li>
+                            <button onClick={() => setSelectedIndex(index)}>{game.name}</button>
+                            <GameDetails game={game} index={index} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
+                        </li>)}
                 </ul>
-                {/* <div className=""></div> */}
             </div>
+            :
+            <div className="loadGamePage"> <p>No games yet...</p></div>
+            }
         </>
     )
 }

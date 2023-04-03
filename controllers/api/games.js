@@ -4,7 +4,8 @@ module.exports = {
     getAllGames,
     addGame,
     getGame,
-    saveGame
+    saveGame,
+    deleteGame
 }
 
 async function getAllGames(req, res) {
@@ -13,7 +14,6 @@ async function getAllGames(req, res) {
 }
 
 async function addGame(req, res) {
-    console.log(req.body)
     const game = await Game.create(req.body);
     res.json(game);
 }
@@ -28,5 +28,10 @@ async function saveGame(req, res) {
     const id = req.params.id;
     const newData = req.body.savedGame;
     const game = await Game.findOneAndUpdate({ _id: id}, {turn: newData.turn, boardLocations: newData.boardLocations}, { new: true });
-    // res.json(game);
+    res.json(game);
+}
+
+async function deleteGame(req, res) {
+    const id = req.params.id;
+    const game = await Game.findByIdAndRemove(id);
 }

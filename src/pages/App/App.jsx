@@ -130,8 +130,8 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/" element={<HomePage />} />
               <Route path="/rules" element={<RulesPage />} />
-              <Route path="/newGame" element={<NewGamePage />} />
-              <Route path="/loadGame" element={<LoadGamePage />} />
+              <Route path="/newGame" element={<NewGamePage user={user}/>} />
+              <Route path="/loadGame" element={<LoadGamePage user={user}/>} />
               <Route path="/game/:id" element={<GamePage />} />
             </Routes>
           </>

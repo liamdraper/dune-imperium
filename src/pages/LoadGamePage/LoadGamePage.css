@@ -9,3 +9,36 @@
     border: 1.5vmin solid black;
     border-radius: 1vmin;
 }
+
+.loadGamePage > ul {
+    margin-right: 70vmin;
+}
+
+.loadGamePage > ul > li {
+    margin-right: 70vmin;
+    margin: 2vmin;
+}
+
+.loadGamePage > ul > li > button {
+    height: 5vmin;
+    width: 20vmin;
+}
+
+.loadGameModal {
+    position: absolute;
+    top: 10vmin;
+    right: 10vmin;
+    height: 60vmin;
+    width: 40vmin;
+    background-color: tan;
+    display: none;
+}
+
+.activeModal {
+    display: block;
+}
+
+.loadGamePage > p {
+    font-size: 5vmin;
+    color: rgb(73, 196, 196);
+}

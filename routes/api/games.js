@@ -7,5 +7,6 @@ router.get('/', gamesCtrl.getAllGames);
 router.post('/', gamesCtrl.addGame);
 router.get('/:id', gamesCtrl.getGame)
 router.put('/:id', gamesCtrl.saveGame);
+router.delete('/:id', gamesCtrl.deleteGame);
 
 module.exports = router;

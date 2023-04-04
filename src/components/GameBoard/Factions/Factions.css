@@ -2,7 +2,6 @@
     grid-row: 1 / 5;
     grid-column: 1 / 2;
     margin: 2vmin;
-    border: .2vmin solid black;
     display: grid;
     flex-direction: column;
 }
@@ -17,5 +16,5 @@
     position: absolute;
     transform: rotate(-90deg);
     top: 10vmin;
-    right: 26vmin;
+    right: 23vmin;
 }

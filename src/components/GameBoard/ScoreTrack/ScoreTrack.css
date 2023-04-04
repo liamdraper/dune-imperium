@@ -2,7 +2,6 @@
     grid-row: 2 / 5;
     grid-column: 3 / 4;
     margin: 2vmin;
-    border: .2vmin solid black;
 }
 
 .scoreTrack {
@@ -13,6 +12,10 @@
 
 .track1, .track2 {
     cursor: pointer;
+}
+
+.track1:hover, .track2:hover {
+    transform: scale(1.1);
 }
 
 .track2 {

@@ -3,8 +3,9 @@
 export default function ImperialBasin() {
     return (
         <>
-        <h3>Imeprial Basin</h3>
-        <div id="location"></div>
+            <div>
+                <h3>Imperial Basin</h3>
+            </div>
         </>
     )
 }

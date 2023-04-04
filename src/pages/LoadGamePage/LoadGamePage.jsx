@@ -36,4 +36,3 @@ export default function LoadGamePage({user}) {
         </>
     )
 }
-// {games.map((game) => <li><Link to={`/game/${game._id}`}>{game.name}</Link></li>)}

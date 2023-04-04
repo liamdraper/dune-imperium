@@ -9,12 +9,11 @@ export default function LandsraadCouncil() {
     return (
         <>
             <div className="landsraadCouncilGrid">
-                {/* <h2>Landsraad Council</h2>
                 <HighCouncil />
                 <HallOfOratory />
                 <Mentat />
                 <RallyTroops />
-                <Swordmaster /> */}
+                <Swordmaster />
             </div>
         </>
     )

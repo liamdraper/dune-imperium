@@ -2,7 +2,18 @@
 
 ## Description
 
-A web companion application for the Dune Imperium board game.  Users can choose leaders, rivals, and save game info.
+A web companion application for the Dune Imperium board game.  Users can choose leaders, rivals, and save data on ongoing games.
+
+## Features
+-3D background space with Three.js library
+-PDF viewer of rulebook with React-pdf library
+-New game and load game functionality that saves user's game to MongoDB database
+-Interactive UI with dynamic image rendering of game card data
+
+## Screenshots
+![alt text](/screenshots/screenShot1.png)
+![alt text](/screenshots/screenShot2.png)
+![alt text](/screenshots/screenShot3.png)
 
 ## Getting Started
 - [Dune Imperium](https://dune-imperium-tts.herokuapp.com)
@@ -21,3 +32,6 @@ A web companion application for the Dune Imperium board game.  Users can choose 
 [![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/liamdraper/dune-imperium)
 
 ## Next Steps
+-Originally, this project was meant to be a fully-playable game, but this version of the project was out of scope for the available project time
+-Create single player version of the game against AI House Hagal Cards
+-Allow muliplayer version utilizing socket.io

@@ -1,10 +1,22 @@
+import "./Carthag.css";
+import { useState, useEffect } from "react";
 
+export default function Carthag({game, setGame}) {
 
-export default function Carthag() {
+    const [taken, setTaken] = useState(null);
+
+    function handleClick() {
+        setTaken(!taken);
+        const newGameData = game;
+        newGameData.boardLocations[8].taken = !taken;
+        setGame(newGameData);
+    }
+
     return (
         <>
-        <h3>Carthag</h3>
-        <div id="location"></div>
+            <div>
+                <h3>Carthag</h3>
+            </div>
         </>
     )
 }

@@ -1,11 +1,19 @@
-.deserts {
+
+.desertsLocations {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
     margin: 2vmin;
-    border: .2vmin solid black; 
-}
-
-.desert-locations {
     display: flex; 
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.desertsLocations > div {
+    background-color: rgb(192, 131, 52);
+    height: 6vmin
+}
+
+.desertsLocations > div:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }

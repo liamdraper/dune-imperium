@@ -1,11 +1,12 @@
 .playerComponents {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    border: .5vmin solid black;
     margin: 2vmin;
     display: flex;
     flex-direction: row;
-    gap: 1vmin;
+    gap: 3vmin;
+    flex-wrap: wrap;
+    font-size: 2vmin;
 }
 
 .deck {
@@ -15,16 +16,13 @@
 }
 
 .hand {
-    border: .2vmin solid black;
     height: 6vmin;
     width: 6vmin;
+    margin-left: 1vmin;
 }
 
 .deck-modal {
     position: fixed;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     top: 55%;
     left: 40%;
     z-index: 1000;
@@ -48,3 +46,17 @@
     gap: 1vmin;
 }
 
+.playerComponents > button {
+    height: 5vmin;
+}
+
+.modalClose {
+    height: 4vmin;
+    width: 4vmin;
+}
+
+.leaderPic {
+    height:12vmin;
+    margin-left: 2vmin;
+    border-radius: 1vmin;
+}

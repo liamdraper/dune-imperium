@@ -13,10 +13,17 @@
     margin: 1vmin;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .boardSpace:hover {
     transform: scale(1.1);
+}
+
+.boardSpace > h3 {
+    position: absolute;
+    top: -4vmin;
+    font-size: 2vmin;
 }
 
 .agentSpace {
@@ -26,8 +33,4 @@
 
 .spaceRewards {
     flex: 1;
-}
-
-#taken {
-    background-color: player.color;
 }

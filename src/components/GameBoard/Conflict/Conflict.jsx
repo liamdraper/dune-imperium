@@ -7,10 +7,9 @@ export default function Conflict({game}) {
     return (
        <>
             <div className="conflictGrid">
-                {/* <h2>Combat</h2>
                 <ConflictDeck game={game}/>
                 <CombatField />
-                <CombatTrack /> */}
+                <CombatTrack />
             </div>
        </>
     )

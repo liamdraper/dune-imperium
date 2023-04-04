@@ -6,5 +6,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.get('/', playersCtrl.getAllPlayers);
 router.post('/', playersCtrl.addPlayer);
 router.get('/:id', playersCtrl.getPlayer);
+router.put('/:id', playersCtrl.savePlayer);
 
 module.exports = router;

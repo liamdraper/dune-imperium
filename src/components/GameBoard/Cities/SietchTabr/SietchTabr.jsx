@@ -1,10 +1,24 @@
+import "./SietchTabr.css";
+import { useState, useEffect } from "react";
 
+export default function SietchTabr({game, setGame}) {
 
-export default function SietchTabr() {
+    const [taken, setTaken] = useState(null);
+
+    console.log(game)
+
+    function handleClick() {
+        setTaken(!taken);
+        const newGameData = game;
+        newGameData.boardLocations[8].taken = !taken;
+        setGame(newGameData);
+    }
+
     return (
         <>
-        <h3>Sietch Tabr</h3>
-        <div id="location"></div>
+            <div>
+                <h3>SietchTabr</h3>
+            </div>
         </>
     )
 }

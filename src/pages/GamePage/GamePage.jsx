@@ -35,7 +35,7 @@ export default function GamePage() {
     return (
         <>
             <div className="gamePageGrid">
-                <GameBoard player={player} setPlayer={setPlayer}/>
+                <GameBoard player={player} setPlayer={setPlayer} game={game} setGame={setGame}/>
                 <Rivals game={game}/>
                 <GameCards />
                 <PlayerComponents game={game} setGame={setGame} player={player} setPlayer={setPlayer}/>

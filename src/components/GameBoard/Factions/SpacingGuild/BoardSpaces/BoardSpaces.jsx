@@ -1,12 +1,12 @@
 import Heighliner from "./Heighliner/Heighliner";
 import Foldspace from "./Foldspace/Foldspace";
 
-export default function BoardSpaces() {
+export default function BoardSpaces({game, setGame}) {
     return (
         <>
             <div className="boardSpaces">
-                <Heighliner />
-                <Foldspace />
+                <Heighliner game={game} setGame={setGame}/>
+                <Foldspace game={game} setGame={setGame}/>
             </div>
         </>
     )

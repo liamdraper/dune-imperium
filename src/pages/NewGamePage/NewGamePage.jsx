@@ -36,8 +36,8 @@ export default function NewGamePage({user}) {
             agent: 2,
             unit: 2,
             persuassion: 0,
-            hand: [],
-            deck: [starterDeck[0], starterDeck[0], starterDeck[1], starterDeck[1], starterDeck[2], starterDeck[2], starterDeck[3], starterDeck[4], starterDeck[5], starterDeck[6]],
+            hand: [starterDeck[0], starterDeck[1], starterDeck[2], starterDeck[3], starterDeck[4]],
+            deck: [],
             discardPile: []
         };
         const player = await addPlayer(playerData);
@@ -98,7 +98,7 @@ export default function NewGamePage({user}) {
                 <h1>WHO ARE YOUR TWO RIVALS?</h1>
                 <ul className="profile-list" id="rivals-list">
                     {/* leaders cant be paul or ariana or the leader already chosen by player */}
-                    {leaders.filter((l) => l.name !== leaders[selectedIndex].name && l.name !== 'Paul Atreides' && l.name !== 'Countess Ariana Thorvald').map((l, index) => <RivalProfileCard leader={l} index={index} rival1={rival1} setRival1={setRival1} rival2={rival2} setRival2={setRival2}/>)}
+                    {leaders.filter((l) => l.name !== leaders[selectedIndex].name && l.name !== 'Paul Atreides' && l.name !== 'Countess Ariana Thorvald').map((l, index) => <RivalProfileCard key={index} leader={l} index={index} rival1={rival1} setRival1={setRival1} rival2={rival2} setRival2={setRival2}/>)}
                 </ul>
                 <button className="previousPageButton" onClick={() => setPage(page-1)}>PREVIOUS</button>
                 <input type="text" value={gameName} onChange={(e) => setGameName(e.target.value)}/>

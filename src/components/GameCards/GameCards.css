@@ -1,6 +1,14 @@
 .gameCardsGrid {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border: .5vmin solid black;
-    margin: 2vmin;
 }
+
+.gameCardsGrid > ul {
+    display: flex;
+    flex-direction: row;
+    gap: .5vmin;
+    margin: 0;
+    padding-left: 1vmin;
+    padding-right: 1vmin;
+}
+

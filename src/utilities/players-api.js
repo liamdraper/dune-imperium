@@ -12,3 +12,7 @@ export function addPlayer(playerData) {
 export function getPlayer(id) {
     return sendRequest(`${BASE_URL}/${id}`);
 }
+
+export function savePlayer(savedPlayer) {
+    return sendRequest(`${BASE_URL}/${savedPlayer._id}`, 'PUT', { savedPlayer });
+}

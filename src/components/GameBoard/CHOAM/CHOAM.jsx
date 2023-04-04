@@ -6,9 +6,8 @@ export default function CHOAM() {
     return (
         <>
             <div className="choamGrid">
-            <h2>CHOAM</h2>
-            <SellMelange />
-            <SecureContract />
+                <SellMelange />
+                <SecureContract />
             </div>
         </>
     )

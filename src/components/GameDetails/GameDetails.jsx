@@ -1,6 +1,6 @@
 import * as gamesAPI from "../../utilities/games-api";
 import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function GameDetails({game, index, selectedIndex, setSelectedIndex}) {
 
@@ -20,6 +20,7 @@ export default function GameDetails({game, index, selectedIndex, setSelectedInde
             <div className={classes}>
                 <h1>{game.name}</h1>
                 <button onClick={deleteGame}>DELETE</button>
+                <Link to={`/game/${game._id}`}>START GAME</Link>
             </div>
         </>
     )

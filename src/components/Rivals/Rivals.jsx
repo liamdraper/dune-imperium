@@ -25,7 +25,6 @@ export default function Rivals({game}) {
     return(
         <>
             <div className="rivals">
-                <h1>Rivals: </h1>
                 <ul>
                     <li className="rivalImg">
                         <h2>{game.rivals[0].name}</h2>

@@ -1,21 +1,22 @@
-// import Desert from "../../../location-pics/deserts.png";
+import "./ResearchStation.css";
+import { useState, useEffect } from "react";
 
-export default function ResearchStation() {
+export default function SietchTabr({game, setGame}) {
+
+    const [taken, setTaken] = useState(null);
+
+    function handleClick() {
+        setTaken(!taken);
+        const newGameData = game;
+        newGameData.boardLocations[8].taken = !taken;
+        setGame(newGameData);
+    }
+
     return (
         <>
-        <div className="board-space">
-            <h3>Research Station</h3>
             <div>
-                <div className="city-icon"></div>
-                {/* <img src={Desert} alt="" /> */}
+                <h3>ResearchStation</h3>
             </div>
-        </div>
-
-
-
-
-        <h3>Research Station</h3>
-        <div id="location"></div>
         </>
     )
 }
